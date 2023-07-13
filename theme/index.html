@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html data-wf-page="5bcf068a1a6ecccf9fb226d8" data-wf-site="5b9276a9170f2376e1047467" lang="fr"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com">
+  <meta charset="utf-8">
+  <title>Ski-club Sierre</title>
+  <meta content="Le ski-club Sierre vous souhaite la bienvenue sur son site. Sorties, cours OJ, photos et documents d'inscriptions, tout s'y trouve !" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="/assets/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/components.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/skiclubsierre-dev.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Inconsolata:400,700","Raleway:300,regular,500,600,700","Bree Serif:regular"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="{{ settings.site.favicon | default: "/assets/images/favicon.png" }}" rel="shortcut icon" type="image/x-icon">
+  <link href="{{ settings.site.apple_touch_icon | default: "/assets/images/webclip.png" }}" rel="apple-touch-icon">
+  <meta name="google-site-verification" content="VKaaBtWnv6sBX_s68BjlDLYAI95ukJB3cCdSxlfLeGc">
+  <style>
+.w-reset.w-editor-bem-EditorLogo {
+  display: none !important;
+}
+</style>
+{{ settings.site.header_additional_content }}{%- include "partials/_site-css-variables" -%}<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><style>.w-video.w-embed {
+            aspect-ratio: 16 / 9;
+        }</style></head>
+<body class="body">
+  <div class="error-payment">
+    <div class="div-block-6">
+      <p class="paragraph"><strong>{{ texts.-30504379 }}</strong>{{ texts.-52cee81b }}</p>
+    </div>
+  </div>
+  <div id="header-nav" class="section-nav wf-section">
+    <div class="wrapper">
+      <a href="{{ links.2f }}" aria-current="page" class="ico-logo-home w-inline-block w--current"><img src="{{ images.-2a484e45.url }}" alt="{{ images.-2a484e45.alt | trim | escape }}" class="logo"></a>
+      <div class="wrapper-nav-desktop">
+        <a href="{{ links.1c1fcfa9 }}" class="nav-link">{{ texts.79f1e42d }}</a>
+        <a href="{{ links.-486aa454 }}" class="nav-link">{{ texts.-2cd2b3dc }}</a>
+        <a href="{{ links.-45f44eb6 }}" class="nav-link">{{ texts.-6372c45 }}</a>
+        <a href="{{ links.571f80ea }}" class="nav-link">{{ texts.-64104400 }}</a>
+      </div>
+      <a href="{{ links.23 }}" data-w-id="c6ef314a-0dfd-0d55-9ac1-ab81aba5b710" class="ico-menu w-inline-block"><img src="{{ images.38e1076f.url }}" alt="{{ images.38e1076f.alt | trim | escape }}"></a>
+    </div>
+    <div data-w-id="07cd34bd-cb65-a789-f587-3be9fc588d5a" class="wrapper-nav-mobile">
+      <div class="wrapper-align-left">
+        <a href="{{ links.148a8e30 }}" class="nav-mobile">{{ texts.-72f73cfc }}</a>
+        <a href="{{ links.-486aa454 }}" class="nav-mobile">{{ texts.-1a2099fa }}</a>
+        <a href="{{ links.-376f7241 }}" class="nav-mobile">{{ texts.-627263ef }}</a>
+        <a href="{{ links.23 }}" class="nav-mobile">{{ texts.-665be167 }}</a>
+        <a href="{{ links.-1bf8bfe4 }}" class="nav-mobile">{{ texts.-64104400 }}</a>
+        <a href="{{ links.2877222e }}" class="nav-mobile">{{ texts.-6319c0f2 }}</a>
+        <a href="{{ links.449f798a }}" class="nav-mobile">{{ texts.-6657af4d }}</a>
+        <a href="{{ links.-2000289f }}" class="nav-mobile">{{ texts.597eaac0 }}</a>
+        <a href="{{ links.1b6b51e4 }}" class="nav-mobile">{{ texts.-d7ed705 }}</a>
+        <a href="{{ links.-2dbc66e0 }}" class="nav-mobile">{{ texts.-627263ef }}</a>
+        <a href="{{ links.-45f44eb6 }}" class="nav-mobile">{{ texts.-50508d68 }}</a>
+        <a href="{{ links.-8d731fd }}" class="nav-mobile">{{ texts.51f3ca76 }}</a>
+        <a href="{{ links.-196dfc8e }}" class="nav-mobile">{{ texts.5f7e6a5e }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="section-hero wf-section">
+    {%- assign collection = collections.annonce | limit: 1 | sort: "-created-on" -%}<div class="collection-list-wrapper-7 w-dyn-list">
+      {%- unless collection.length == 0 -%}<div role="list" class="collection-list-5 w-dyn-items">
+        {%- for item in collection -%}<div role="listitem" class="collection-item-10 w-dyn-item">
+          <div class="punchline w-richtext">{{ item.templateContent | markdown | markdown }}</div>
+        </div>{%- endfor -%}
+      </div>{%- endunless -%}
+      {%- if collection.length == 0 -%}<div class="w-dyn-empty">
+        <div>{{ texts.3d503d2b }}</div>
+      </div>{%- endif -%}
+    </div>
+  </div>
+  <div class="section-sorties wf-section">
+    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,eq,true", "ALL", page.inputPath | sort: "f_date" | limit: 3 -%}<div class="cl-wrapper-sorties-feat-desktop w-dyn-list">
+      {%- unless collection.length == 0 -%}<div role="list" class="collection-list w-clearfix w-dyn-items">
+        {%- for item in collection -%}<div role="listitem" class="collection-item w-dyn-item">
+          <div class="wrapper-shadow">
+            <div class="cache-sorties">
+              <a href="{{ item.url }}" class="link-block w-inline-block"></a>
+              <h3 class="heading-showcased">{{ item.data.title }}</h3>
+              <div class="wrapper-dates w-clearfix">
+                <div class="date-showcased">{{ item.data.f_date | formatDate: "dd" }}</div>
+                <div class="date-showcased dateclass">{{ item.data.f_date | formatDate: "MMM" }}</div>
+                <div class="date-showcased">{{ item.data.f_date | formatDate: "yyyy" }}</div>
+              </div>
+            </div>
+            <div class="wrapper-sortie-content">
+              <p class="paragraph-showcased">{{ item.data.f_texte-2 }}</p>
+              <a href="{{ item.url }}" class="linkblock-read-more-center w-inline-block">
+                <div class="link-readmore">{{ texts.-2a1932e0 }}</div><img src="{{ images.611dd774.url }}" alt="{{ images.611dd774.alt | trim | escape }}" loading="lazy" class="ico-arrow-right">
+              </a>
+              <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block">
+                <div>{{ texts.-25d7d662 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
+              </a>
+            </div>
+          </div>
+        </div>{%- endfor -%}
+      </div>{%- endunless -%}
+      {%- if collection.length == 0 -%}<div class="w-dyn-empty">
+        <div>{{ texts.3d503d2b }}</div>
+      </div>{%- endif -%}
+    </div>
+    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,eq,true", "ALL", page.inputPath | sort: "f_date" | limit: 1 -%}<div class="cl-wrapper-sorties-feat-mobile w-dyn-list">
+      {%- unless collection.length == 0 -%}<div role="list" class="collection-list w-clearfix w-dyn-items">
+        {%- for item in collection -%}<div role="listitem" class="collection-item w-dyn-item">
+          <div class="wrapper-shadow">
+            <div class="cache-sorties">
+              <a href="{{ item.url }}" class="link-block w-inline-block"></a>
+              <h3 class="heading-showcased">{{ item.data.title }}</h3>
+              <div class="wrapper-dates w-clearfix">
+                <div class="date-showcased">{{ item.data.f_date | formatDate: "dd" }}</div>
+                <div class="date-showcased">{{ item.data.f_date | formatDate: "MMM" }}</div>
+                <div class="date-showcased">{{ item.data.f_date | formatDate: "yyyy" }}</div>
+              </div>
+            </div>
+            <div class="wrapper-sortie-content">
+              <p class="paragraph-showcased">{{ item.data.f_texte-2 }}</p>
+              <a href="{{ item.url }}" class="linkblock-read-more-center w-inline-block">
+                <div class="link-readmore">{{ texts.-32836092 }}</div><img src="{{ images.611dd774.url }}" alt="{{ images.611dd774.alt | trim | escape }}" class="ico-arrow-right">
+              </a>
+              <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block w-clearfix">
+                <div class="text-cta">{{ texts.-25d7d662 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" class="ico-arrow-down">
+              </a>
+            </div>
+          </div>
+        </div>{%- endfor -%}
+      </div>{%- endunless -%}
+      {%- if collection.length == 0 -%}<div class="w-dyn-empty">
+        <div>{{ texts.3d503d2b }}</div>
+      </div>{%- endif -%}
+    </div>
+    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,ne,true", "ALL", page.inputPath | sort: "f_date" -%}<div id="saison-actuelle" class="cl-wrapper-sorties-all-desktop w-dyn-list">
+      {%- unless collection.length == 0 -%}<div role="list" class="w-clearfix w-dyn-items w-row">
+        {%- for item in collection -%}<div role="listitem" class="collection-item-2 w-dyn-item w-col w-col-4">
+          <div class="wrapper-2 w-clearfix">
+            {%- assign couleursOfSorties = item.data.f_couleur | resolveReference -%}<a href="{{ item.url }}" class="linkblock-thumb-additonal-event w-inline-block" style="border-color: {{couleursOfSorties.data.f_sorties}};"></a>
+            <div class="wrapper-title-date-journal">
+              <div class="title-journal">{{ item.data.title }}</div>
+              <div class="wrapper-le-date">
+                <div class="date-additional-event">{{ texts.d79 }}</div>
+                <div class="dayclass date-additional-event">{{ item.data.f_date | formatDate: "EEEE" }}</div>
+                <div class="date-additional-event">{{ item.data.f_date | formatDate: "dd" }}</div>
+                <div class="date-additional-event dateclass">{{ item.data.f_date | formatDate: "MMM" }}</div>
+                <div class="date-additional-event">{{ item.data.f_date | formatDate: "yyyy" }}</div>
+              </div>
+              <div class="wrapper-dates">
+                <a href="{{ item.url }}" class="linkblock-read-more-left w-inline-block">
+                  <div class="link-readmore">{{ texts.49563139 }}</div><img src="{{ images.611dd774.url }}" alt="{{ images.611dd774.alt | trim | escape }}" loading="lazy" class="ico-arrow-right">
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block">
+            <div>{{ texts.dd05459 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
+          </a>
+        </div>{%- endfor -%}
+      </div>{%- endunless -%}
+      {%- if collection.length == 0 -%}<div class="empty-state-box w-dyn-empty">
+        <div class="error-text">{{ texts.-65358982 }}</div>
+      </div>{%- endif -%}
+    </div>
+    <div class="all-sorties-mobile">{{ texts.2b46a29f }}</div>
+    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true", "ALL", page.inputPath | sort: "f_date" | offset: 1 | limit: 100 -%}<div class="cl-wrapper-sorties-all-mobile w-dyn-list">
+      {%- unless collection.length == 0 -%}<div role="list" class="w-clearfix w-dyn-items w-row">
+        {%- for item in collection -%}<div role="listitem" class="collection-item-2 w-dyn-item w-col w-col-4">
+          <div class="wrapper-2 w-clearfix">
+            {%- assign couleursOfSorties = item.data.f_couleur | resolveReference -%}<a href="{{ item.url }}" class="linkblock-thumb-additonal-event w-inline-block" style="border-color: {{couleursOfSorties.data.f_sorties}};"></a>
+            <div class="wrapper-title-date-journal">
+              <div class="title-journal">{{ item.data.title }}</div>
+              <div class="wrapper-le-date">
+                <div class="date-additional-event">{{ texts.d79 }}</div>
+                <div class="date-additional-event">{{ item.data.f_date | formatDate: "EEEE" }}</div>
+                <div class="date-additional-event">{{ item.data.f_date | formatDate: "dd" }}</div>
+                <div class="date-additional-event dateclass">{{ item.data.f_date | formatDate: "MMM" }}</div>
+                <div class="date-additional-event">{{ item.data.f_date | formatDate: "yyyy" }}</div>
+              </div>
+              <div class="wrapper-dates">
+                <a href="{{ item.url }}" class="linkblock-read-more-left w-inline-block">
+                  <div class="link-readmore"><strong class="bold-text">{{ texts.49563139 }}</strong></div><img src="{{ images.611dd774.url }}" alt="{{ images.611dd774.alt | trim | escape }}" class="ico-arrow-right">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper-3">
+            <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block">
+              <div class="link-readmore green">{{ texts.dd05459 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" class="ico-arrow-down">
+            </a>
+          </div>
+        </div>{%- endfor -%}
+      </div>{%- endunless -%}
+      {%- if collection.length == 0 -%}<div class="empty-state-box w-dyn-empty">
+        <div class="error-text">{{ texts.-65358982 }}</div>
+      </div>{%- endif -%}
+    </div>
+  </div>
+  <div class="section-oj wf-section">
+    <div class="container-max-980px">
+      <h1 id="oj-actuel" class="heading-section align-center">{{ texts.-2cd2b3dc }}</h1>
+      <p class="paragraph-2">{{ texts.-214e2e19 }}</p>
+      {%- assign collection = collections.oj | filter: "f_saison-actuelle,eq,true", "ALL", page.inputPath | sort: "f_date" -%}<div class="cl-wrapper-oj-all w-dyn-list">
+        {%- unless collection.length == 0 -%}<div role="list" class="w-clearfix w-dyn-items w-row">
+          {%- for item in collection -%}<div role="listitem" class="collection-item-2 w-dyn-item w-col w-col-4">
+            <div class="wrapper-2 w-clearfix">
+              {%- assign couleursOfOj = item.data.f_couleur | resolveReference -%}<a href="{{ item.url }}" class="linkblock-thumb-additonal-event w-inline-block" style="border-color: {{couleursOfOj.data.f_sorties}};"></a>
+              <div class="wrapper-title-date-journal">
+                <div class="title-journal">{{ item.data.title }}</div>
+                <div class="wrapper-le-date">
+                  <div class="date-additional-event">{{ texts.d79 }}</div>
+                  <div class="date-additional-event dayclass">{{ item.data.f_date | formatDate: "EEEE" }}</div>
+                  <div class="date-additional-event">{{ item.data.f_date | formatDate: "dd" }}</div>
+                  <div class="date-additional-event dateclass">{{ item.data.f_date | formatDate: "MMM" }}</div>
+                  <div class="date-additional-event">{{ item.data.f_date | formatDate: "yyyy" }}</div>
+                </div>
+                <div class="wrapper-dates">
+                  <a href="{{ item.url }}" class="linkblock-read-more-left w-inline-block">
+                    <div class="link-readmore"><strong>{{ texts.49563139 }}</strong></div><img src="{{ images.611dd774.url }}" alt="{{ images.611dd774.alt | trim | escape }}" loading="lazy" class="ico-arrow-right">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="{{ item.data.f_lien-google-calendar }}" class="cta-save-calendar w-inline-block">
+              <div>{{ texts.-3093653 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
+            </a>
+          </div>{%- endfor -%}
+        </div>{%- endunless -%}
+        {%- if collection.length == 0 -%}<div class="w-dyn-empty">
+          <div>{{ texts.3d503d2b }}</div>
+        </div>{%- endif -%}
+      </div>
+    </div>
+    <div class="img-background-oj">
+      <div class="wrapper-two-divs">
+        <div class="div-wrapper-membre">
+          <div class="div-bg-oj">
+            <h3 class="heading-pricing-oj">{{ texts.2d722f1 }}</h3>
+          </div>
+          <div class="div-bg-white-oj">
+            <h4 class="heading-category-oj">{{ texts.-76d887c0 }}</h4>
+            <p>{{ texts.-6e61210c }}</p>
+            <div class="wrapper-list">
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.-127e822a }}</div>
+              </div>
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.-350bdf90 }}</div>
+              </div>
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.6a173344 }}</div>
+              </div>
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.-5683598c }}</div>
+              </div>
+            </div>
+            <a href="{{ links.-63d1a244 }}" target="_blank" class="cta-save-calendar w-inline-block">
+              <div>{{ texts.5497ee9 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
+            </a>
+          </div>
+        </div>
+        <div class="div-wrapper-membre">
+          <div class="div-bg-oj">
+            <h3 class="heading-pricing-oj">{{ texts.2d968cc }}</h3>
+          </div>
+          <div class="div-bg-white-oj">
+            <h4 class="heading-category-oj">{{ texts.-7d28e453 }}</h4>
+            <p>{{ texts.4011aaf9 }}</p>
+            <div class="wrapper-list">
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.-127e822a }}</div>
+              </div>
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.-350bdf90 }}</div>
+              </div>
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.6a173344 }}</div>
+              </div>
+              <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
+                <div class="text-checklist">{{ texts.67a8b94a }}</div>
+              </div>
+            </div>
+            <a href="{{ links.-63d1a244 }}" target="_blank" class="cta-save-calendar w-inline-block">
+              <div>{{ texts.5497ee9 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-max-980px">
+      <p class="paragraph-conditions">{{ texts.724f233a }}<strong>{{ texts.43106983 }}</strong>{{ texts.-28298ba8 }}</p>
+      <div class="div-block-2">
+        <a href="{{ links.-63d1a244 }}" target="_blank" class="cta-save-calendar width-auto w-inline-block">
+          <div>{{ texts.5497ee9 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" class="ico-arrow-down">
+        </a>
+      </div>
+      <p class="paragraph-allcaps">{{ texts.51bc41ea }}<strong>{{ texts.-10028065 }}</strong>{{ texts.-42f68b5e }}<a href="{{ links.-51e96690 }}" class="link">{{ texts.-2ced3ac7 }}</a>
+      </p>
+    </div>
+  </div>
+  <div class="section-footer wf-section">
+    <div class="wrapper-footer-menu">
+      <div class="container-wrapper-footer-menu">
+        <div class="wrapper-menu-footer">
+          <a href="{{ links.449f798a }}" target="_blank" class="link-footer-nav">{{ texts.-6657af4d }}</a>
+          <a href="{{ links.-2000289f }}" target="_blank" class="link-footer-nav">{{ texts.597eaac0 }}</a>
+        </div>
+        <div class="wrapper-menu-footer">
+          <a href="{{ links.-45f44eb6 }}" class="link-footer-nav">{{ texts.-6372c45 }}</a>
+        </div>
+        <div class="wrapper-menu-footer">
+          <a href="{{ links.-196dfc8e }}" class="link-footer-nav">{{ texts.1549a127 }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-copyright">
+      <div class="container-static w-container">
+        <div class="wrapper-footer-logo-copyright">
+          <div class="wrapper-footer-logo-copyright">
+            <div class="wrapper-infos-facebook">
+              <div class="text-copyright">{{ texts.-57edfce3 }}<a href="{{ links.64a1e758 }}" target="_blank" class="link-copyright"></a>
+              </div>
+              <div class="wrapper-copyright-logo-fb">
+                <div class="html-embed-facebook w-embed">
+                  <div class="fb-like" data-href="https://www.facebook.com/tlhsierre/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+                </div>
+              </div>
+            </div>
+            <div class="wrapper-logo-footer">
+              <a target="_blank" href="{{ links.-2857e696 }}" class="link-block-logo-footer w-inline-block"><img src="{{ images.3e8eafca.url }}" alt="{{ images.3e8eafca.alt | trim | escape }}" class="icon-logo-footer"></a>
+              <a href="{{ links.-54f1e5e4 }}" class="link-block-logo-footer w-inline-block"><img src="{{ images.3323f87b.url }}" alt="{{ images.3323f87b.alt | trim | escape }}" class="icon-logo-footer"></a>
+              <a href="{{ links.-53ef078 }}" class="link-block-logo-footer w-inline-block"><img src="{{ images.579f23c0.url }}" alt="{{ images.579f23c0.alt | trim | escape }}" class="icon-logo-footer"></a>
+              <a href="{{ links.-2eee9dba }}" class="link-block-logo-footer w-inline-block"><img src="{{ images.-2a484e45.url }}" alt="{{ images.-2a484e45.alt | trim | escape }}" class="logo-tlh-copyright"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript" crossorigin="anonymous"></script>
+  <script src="/assets/js/skiclubsierre-dev.js" type="text/javascript"></script><!--  Finsweet Cookie Consent  -->
+  <script async="" src="https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js" fs-cc-mode="opt-in" fs-cc-expires="180" fs-cc-source="/modules/static/cookie-consent"></script>
+  <!-- date conversion -->
+  <script>
+console.clear();var data={months:{en:"January February March April May June July August September October November December".split(" "),local:[]},days:{en:"Monday Tuesday Wednesday Thursday Friday Saturday Sunday".split(" "),local:[]}};data.months.local="Janvier F\u00e9vrier Mars Avril Mai Juin Juillet Aout Septembre Octobre Novembre D\u00e9cembre".split(" ");data.days.local="Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche".split(" ");12!==data.months.local.length&&console.error("Months are incorrect! Check your script.");
+7!==data.days.local.length&&console.error("Days are incorrect! Check your script.");
+var shortenDaysMonths=function(c){return c.substring(0,3)},convertToLocal=function(c,e){e.each(function(){var d=$(this),b=d.text();if("m"===c||"month"===c||"months"===c)for(var a=0;a<data.months.en.length;a++)b=b.replace(data.months.en[a],data.months.local[a]),b=b.replace(shortenDaysMonths(data.months.en[a]),shortenDaysMonths(data.months.local[a])),d.text(b);else if("d"===c||"day"===c||"days"===c)for(a=0;a<data.days.en.length;a++)b=b.replace(data.days.en[a],data.days.local[a]),b=b.replace(shortenDaysMonths(data.days.en[a]),
+shortenDaysMonths(data.days.local[a])),d.text(b)})};
+</script>
+  <!-- convert time -->
+  <script>
+$(document).ready(function(){function c(a){a=a.replace(":"," ");a=a.split(" ");var b=a[2].toLowerCase();return(12==a[0]?"am"==b?0:12:"pm"==b?parseInt(a[0])+12:a[0])+":"+a[1]}$(".timetoformat").each(function(){$(this).html(c($(this).html()))})});
+</script>
+  <!-- date conversion -->
+  <script>
+var allDates=$(".dateclass"),allDays=$(".dayclass");convertToLocal("m",allDates);convertToLocal("d",allDays);
+</script>
+  <!--  isotope and imageloaded -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+  <!-- isotope for lightbox -->
+  <script>
+$(document).ready(function(){var a=$(".grid-thumbnails").isotope({itemSelector:".lightbox-thumbnail"});a.imagesLoaded().progress(function(){a.isotope("layout")})});
+</script>
+
+<script src="/assets/js/udesly-11ty.min.js" async="" defer=""></script>{{ settings.site.footer_additional_content }}<script>window.netlifyIdentity&&window.netlifyIdentity.on("init",a=>{a||window.netlifyIdentity.on("login",()=>{document.location.href="/admin/"})});</script></body></html>

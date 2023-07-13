@@ -1,0 +1,2239 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  branch: main
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: annonce
+    label: Annonces
+    folder: cms/annonce
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Texte
+        name: body
+        widget: markdown
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: annonce
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[annonce].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: sorties
+    label: Sorties
+    folder: cms/sorties
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: selectionner la saison à laquelle appartient la sortie
+        name: f_saison-3
+        label: saison
+        widget: relation
+        required: false
+        collection: category
+        value_field: cms/category/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: ''
+        name: f_date
+        label: date
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_texte-2
+        label: texte
+        widget: string
+        required: false
+      - hint: 'cette sortie est-elle en "featuring" sur la page d''acceuil ? '
+        name: f_featuring-2
+        label: featuring
+        widget: boolean
+        required: false
+        default: false
+      - hint: >-
+          cette sortie fait-elle partie de la saison actuelle ? Si oui, activer
+          le switch. 
+        name: f_featuring
+        label: saison actuelle
+        widget: boolean
+        required: false
+        default: false
+      - hint: ''
+        name: f_lien-calendrier-google
+        label: lien calendrier Google
+        widget: string
+        required: false
+      - hint: lien dropbox du fichier contenenant toutes les photos de la sortie
+        name: f_dropbox-images
+        label: lien dropbox images
+        widget: string
+        required: false
+      - hint: ''
+        name: f_image-miniature
+        label: image miniature
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_checklist-1
+        label: 'checklist #1'
+        widget: string
+        required: false
+      - hint: ''
+        name: f_checklist-2
+        label: 'checklist #2'
+        widget: string
+        required: false
+      - hint: ''
+        name: f_couleur
+        label: couleur
+        widget: relation
+        required: false
+        collection: couleurs
+        value_field: cms/couleurs/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: ''
+        name: f_image-1
+        label: image 1
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-2
+        label: image 2
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-3
+        label: image 3
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-4
+        label: image 4
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-5
+        label: image 5
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-6
+        label: image 6
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-7
+        label: image 7
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-8
+        label: image 8
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-9
+        label: image 9
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-10
+        label: image 10
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-11
+        label: image 11
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-12
+        label: image 12
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-13
+        label: image 13
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-14
+        label: image 14
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-15
+        label: image 15
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-16
+        label: image 16
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-17
+        label: image 17
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-18
+        label: image 18
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: sorties
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[sorties].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: auteurs
+    label: Auteurs
+    folder: cms/auteurs
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_photo-miniature
+        label: photo miniature
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_adresse-email
+        label: adresse email
+        widget: string
+        required: false
+      - hint: ''
+        name: f_numero-de-telephone
+        label: numéro de téléphone
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: auteurs
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[auteurs].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: couleurs
+    label: Couleurs
+    folder: cms/couleurs
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_sorties
+        label: Couleur
+        widget: color
+        required: false
+        enableAlpha: true
+        allowInput: true
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: couleurs
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[couleurs].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: oj
+    label: OJs
+    folder: cms/oj
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: selectioner la saison à laquelle appartient le cours OJ
+        name: f_saison-3
+        label: saison
+        widget: relation
+        required: false
+        collection: category
+        value_field: cms/category/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: >-
+          ce cours OJ fait-il parti de la saison actuelle ? Si oui, activer le
+          switch.
+        name: f_saison-actuelle
+        label: saison actuelle
+        widget: boolean
+        required: false
+        default: false
+      - hint: ''
+        name: f_date
+        label: date
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_image-miniature
+        label: image miniature
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_texte
+        label: texte
+        widget: string
+        required: false
+      - hint: ''
+        name: f_couleur
+        label: couleur
+        widget: relation
+        required: false
+        collection: couleurs
+        value_field: cms/couleurs/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: ''
+        name: f_lien-google-calendar
+        label: lien google calendar
+        widget: string
+        required: false
+      - hint: lien dropbox du fichier contenant toutes les images du cours OJ
+        name: f_lien-dropbox-images
+        label: lien dropbox images
+        widget: string
+        required: false
+      - hint: ''
+        name: f_image-1
+        label: image 1
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-2
+        label: image 2
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-3
+        label: image 3
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-4
+        label: image 4
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-5
+        label: image 5
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-6
+        label: image 6
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-7
+        label: image 7
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-8
+        label: image 8
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-9
+        label: image 9
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-10
+        label: image 10
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-11
+        label: image 11
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-12
+        label: image 12
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-13
+        label: image 13
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-14
+        label: image 14
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-15
+        label: image 15
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-16
+        label: image 16
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-17
+        label: image 17
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-18
+        label: image 18
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-19
+        label: image 19
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-20
+        label: image 20
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-21
+        label: image 21
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_image-22
+        label: image 22
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: oj
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[oj].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: category
+    label: Saisons
+    folder: cms/category
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ' écrire dans "Name" l''année la plus haute de la saison. Par exemple pour la saison  2018 - 2019, rentrer le nombre "2019"'
+        name: f_saison7
+        label: Saison
+        widget: string
+        required: false
+      - hint: Cette saison est-elle courante ? Si oui activer le switch.
+        name: f_saison-courante
+        label: Saison courante
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: category
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[category].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: documents
+    label: Documents
+    folder: cms/documents
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: copier coller ici le lien dropbox du document en question
+        name: f_lien-dropbox-du-document-en-question
+        label: lien dropbox du document en question
+        widget: string
+        required: false
+      - hint: description du document
+        name: f_description
+        label: description
+        widget: text
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: documents
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[documents].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: Sorties 22 - 23, key: 79f1e42d'
+            label: Text
+            name: 79f1e42d
+            widget: string
+          - hint: 'Original text: OJ 2023, key: -2cd2b3dc'
+            label: Text
+            name: '-2cd2b3dc'
+            widget: string
+          - hint: 'Original text: Inscriptions, key: -6372c45'
+            label: Text
+            name: '-6372c45'
+            widget: string
+          - hint: 'Original text: Contact, key: -64104400'
+            label: Text
+            name: '-64104400'
+            widget: string
+          - hint: 'Original text: Sorties 2019 - 20, key: -72f73cfc'
+            label: Text
+            name: '-72f73cfc'
+            widget: string
+          - hint: 'Original text: OJ 2019 - 20, key: -1a2099fa'
+            label: Text
+            name: '-1a2099fa'
+            widget: string
+          - hint: 'Original text: Archives, key: -627263ef'
+            label: Text
+            name: '-627263ef'
+            widget: string
+          - hint: 'Original text: Le ski-club, key: -665be167'
+            label: Text
+            name: '-665be167'
+            widget: string
+          - hint: 'Original text: Bulletins d''enneigement, key: -6319c0f2'
+            label: Text
+            name: '-6319c0f2'
+            widget: string
+          - hint: 'Original text: Dangers d''avalanches, key: -6657af4d'
+            label: Text
+            name: '-6657af4d'
+            widget: string
+          - hint: 'Original text: Prévisions Météosuisse, key: 597eaac0'
+            label: Text
+            name: 597eaac0
+            widget: string
+          - hint: 'Original text: Prévisions Valais central, key: -d7ed705'
+            label: Text
+            name: '-d7ed705'
+            widget: string
+          - hint: 'Original text: Documents, key: -50508d68'
+            label: Text
+            name: '-50508d68'
+            widget: string
+          - hint: 'Original text: Confidentialité, key: 51f3ca76'
+            label: Text
+            name: 51f3ca76
+            widget: string
+          - hint: 'Original text: Conditions d''utilisation, key: 5f7e6a5e'
+            label: Text
+            name: 5f7e6a5e
+            widget: string
+          - hint: >-
+              Original text: Politique de confidentialité du Ski Club Sierre,
+              key: 422a0edb
+            label: Text
+            name: 422a0edb
+            widget: string
+          - hint: 'Original text: ‍, key: 200d'
+            label: Text
+            name: 200d
+            widget: string
+          - hint: 'Original text: Dernière mise à jour : 4 juin 2023, key: 1db58120'
+            label: Text
+            name: 1db58120
+            widget: string
+          - hint: >-
+              Original text: Le Ski Club Sierre s'engage à protéger la vie
+              privée et les informations personnelles des visiteurs de son site
+              Internet. La présente politique de confidentialité décrit la
+              manière dont nous recueillons, utilisons et protégeons vos
+              informations lorsque vous visitez notre site web,
+              skiclubsierre.ch. En accédant à notre site web et en l'utilisant,
+              vous acceptez les conditions et pratiques décrites dans cette
+              politique de confidentialité., key: 3c23547f
+            label: Text
+            name: 3c23547f
+            widget: text
+          - hint: >-
+              Original text: Les informations que nous recueillons :, key:
+              7cfdc76
+            label: Text
+            name: 7cfdc76
+            widget: string
+          - hint: >-
+              Original text: Lorsque vous visitez notre site web, nous pouvons
+              collecter certaines informations, notamment :, key: -268319bb
+            label: Text
+            name: '-268319bb'
+            widget: text
+          - hint: >-
+              Original text: Informations personnelles : Nous pouvons recueillir
+              des informations personnelles, telles que votre nom, votre adresse
+              électronique et vos coordonnées, uniquement si vous nous les
+              fournissez volontairement par le biais de formulaires de contact
+              ou de fonctions d'abonnement., key: -5afa620f
+            label: Text
+            name: '-5afa620f'
+            widget: text
+          - hint: >-
+              Original text: Informations relatives à l'utilisation : Nous
+              pouvons recueillir des informations non personnellement
+              identifiables sur votre interaction avec notre site web, telles
+              que votre adresse IP, votre type de navigateur, des informations
+              sur votre appareil, les pages visitées et l'URL de référence. Ces
+              informations sont collectées par le biais de cookies et de
+              technologies similaires et sont utilisées pour analyser les
+              tendances d'utilisation du site web et améliorer nos services.,
+              key: 33522c64
+            label: Text
+            name: 33522c64
+            widget: text
+          - hint: 'Original text: Utilisation des informations :, key: -177bcf3a'
+            label: Text
+            name: '-177bcf3a'
+            widget: string
+          - hint: >-
+              Original text: Nous pouvons utiliser les informations collectées
+              aux fins suivantes :, key: e393a3e
+            label: Text
+            name: e393a3e
+            widget: string
+          - hint: >-
+              Original text: Fournir et améliorer nos services : Nous pouvons
+              utiliser vos informations personnelles pour répondre à vos
+              demandes, vous fournir les informations demandées et vous proposer
+              un contenu pertinent et des mises à jour concernant nos services.,
+              key: 742430a5
+            label: Text
+            name: 742430a5
+            widget: text
+          - hint: >-
+              Original text: Améliorer l'expérience du site web : Nous pouvons
+              utiliser les informations d'utilisation pour analyser les
+              performances du site web, suivre les préférences des utilisateurs
+              et optimiser la fonctionnalité, la sécurité et le contenu de notre
+              site web., key: 2661f7e2
+            label: Text
+            name: 2661f7e2
+            widget: text
+          - hint: >-
+              Original text: Pour communiquer avec vous : Nous pouvons utiliser
+              vos coordonnées pour vous envoyer des notifications
+              administratives, des mises à jour, des bulletins d'information,
+              des communications marketing et d'autres informations relatives au
+              Ski Club Sierre. Vous pouvez à tout moment refuser de recevoir ces
+              communications., key: 27f866ce
+            label: Text
+            name: 27f866ce
+            widget: text
+          - hint: 'Original text: Partage d''informations :, key: 26648fb8'
+            label: Text
+            name: 26648fb8
+            widget: string
+          - hint: >-
+              Original text: Nous respectons votre vie privée et ne divulguerons
+              pas vos informations personnelles à des tiers, sauf si la loi
+              l'exige ou si vous y consentez. Toutefois, nous pouvons partager
+              des informations non personnellement identifiables à des fins
+              d'analyse ou de marketing avec des prestataires de services tiers
+              de confiance., key: -576957ba
+            label: Text
+            name: '-576957ba'
+            widget: text
+          - hint: 'Original text: Sécurité des données :, key: -669daf54'
+            label: Text
+            name: '-669daf54'
+            widget: string
+          - hint: >-
+              Original text: Nous utilisons des mesures de sécurité conformes
+              aux normes industrielles pour protéger vos informations
+              personnelles contre l'accès, la divulgation, l'altération ou la
+              destruction non autorisés. Toutefois, veuillez noter qu'aucune
+              transmission de données sur l'internet ou méthode de stockage
+              électronique n'est totalement sûre. Nous ne pouvons donc pas
+              garantir la sécurité absolue de vos informations., key: -636156ec
+            label: Text
+            name: '-636156ec'
+            widget: text
+          - hint: 'Original text: Liens externes :, key: 172ef8bb'
+            label: Text
+            name: 172ef8bb
+            widget: string
+          - hint: >-
+              Original text: Notre site web peut contenir des liens vers des
+              sites web de tiers pour votre commodité et votre information. Ces
+              sites web externes fonctionnent de manière indépendante et ont
+              leur propre politique de confidentialité. Nous n'avons aucun
+              contrôle sur leur contenu ou leurs pratiques et, par conséquent,
+              nous ne sommes pas responsables des pratiques en matière de
+              protection de la vie privée ou du contenu de ces sites web., key:
+              -56665a75
+            label: Text
+            name: '-56665a75'
+            widget: text
+          - hint: >-
+              Original text: Modifications de la politique de confidentialité :,
+              key: 2b8fabf6
+            label: Text
+            name: 2b8fabf6
+            widget: string
+          - hint: >-
+              Original text: Nous nous réservons le droit de modifier ou de
+              mettre à jour la présente politique de confidentialité à tout
+              moment. Toute modification entrera en vigueur dès la publication
+              de la version mise à jour sur notre site web. Nous vous
+              encourageons à consulter régulièrement la présente politique de
+              confidentialité afin de rester informé de la manière dont nous
+              collectons, utilisons et protégeons vos informations., key:
+              3c2da67a
+            label: Text
+            name: 3c2da67a
+            widget: text
+          - hint: 'Original text: Contactez-nous :, key: 5ed38491'
+            label: Text
+            name: 5ed38491
+            widget: string
+          - hint: >-
+              Original text: Si vous avez des questions, des préoccupations ou
+              des demandes concernant la présente politique de confidentialité
+              ou nos pratiques en matière de confidentialité, veuillez nous
+              contacter à l'adresse suivante : info@skiclubsierre.ch., key:
+              44266db4
+            label: Text
+            name: 44266db4
+            widget: text
+          - hint: >-
+              Original text: EN UTILISANT NOTRE SITE WEB, VOUS RECONNAISSEZ
+              AVOIR LU ET COMPRIS LA PRÉSENTE POLITIQUE DE PROTECTION DE LA VIE
+              PRIVÉE ET CONSENTEZ À LA COLLECTE, À L'UTILISATION ET À LA
+              DIVULGATION DE VOS INFORMATIONS COMME DÉCRIT DANS LE PRÉSENT
+              DOCUMENT., key: 3c60d3b
+            label: Text
+            name: 3c60d3b
+            widget: text
+          - hint: 'Original text: Politique de Confidentialité, key: 1549a127'
+            label: Text
+            name: 1549a127
+            widget: string
+          - hint: 'Original text: ©️ 2023 Ski-club Sierre, key: -57edfce3'
+            label: Text
+            name: '-57edfce3'
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: Sorties, key: -157413a7'
+            label: Text
+            name: '-157413a7'
+            widget: string
+          - hint: 'Original text: Saison , key: -2dd71cf7'
+            label: Text
+            name: '-2dd71cf7'
+            widget: string
+          - hint: 'Original text: le, key: d79'
+            label: Text
+            name: d79
+            widget: string
+          - hint: 'Original text: sauver dans le calendrier, key: -25d7d662'
+            label: Text
+            name: '-25d7d662'
+            widget: string
+          - hint: >-
+              Original text: Téléchargez toutes les photos de cette sortie
+              depuis notre Dropbox., key: -795694fb
+            label: Text
+            name: '-795694fb'
+            widget: string
+          - hint: 'Original text: Autres sorties de la saison:, key: -7d0e68f0'
+            label: Text
+            name: '-7d0e68f0'
+            widget: string
+          - hint: "Original text: Nous trouver\_:, key: 5befbd78"
+            label: Text
+            name: 5befbd78
+            widget: string
+          - hint: 'Original text: nmy1986@gmail.com, key: 53beaeb1'
+            label: Text
+            name: 53beaeb1
+            widget: string
+          - hint: 'Original text: OJ, key: 9db'
+            label: Text
+            name: 9db
+            widget: string
+          - hint: 'Original text: Saison, key: -6cd56409'
+            label: Text
+            name: '-6cd56409'
+            widget: string
+          - hint: "Original text: Téléchargez toutes les photos de cet OJ\_depuis notre Dropbox., key: -44f350c9"
+            label: Text
+            name: '-44f350c9'
+            widget: string
+          - hint: "Original text: Autres cours OJ\_de la saison :, key: 15ef618c"
+            label: Text
+            name: 15ef618c
+            widget: string
+          - hint: 'Original text: ERR_STRIPE, key: -30504379'
+            label: Text
+            name: '-30504379'
+            widget: string
+          - hint: >-
+              Original text:  (card not found) Contactez votre administrateur
+              technique., key: -52cee81b
+            label: Text
+            name: '-52cee81b'
+            widget: string
+          - hint: 'Original text: lire d''avantage, key: -2a1932e0'
+            label: Text
+            name: '-2a1932e0'
+            widget: string
+          - hint: 'Original text: ... lire d''avantage, key: -32836092'
+            label: Text
+            name: '-32836092'
+            widget: string
+          - hint: 'Original text: ... informations, key: 49563139'
+            label: Text
+            name: '49563139'
+            widget: string
+          - hint: 'Original text: sauver la sortie dans le calendrier, key: dd05459'
+            label: Text
+            name: dd05459
+            widget: string
+          - hint: >-
+              Original text: Aucune sortie de la saison actuelle n'est à
+              afficher., key: -65358982
+            label: Text
+            name: '-65358982'
+            widget: string
+          - hint: 'Original text: Toutes les sorties:, key: 2b46a29f'
+            label: Text
+            name: 2b46a29f
+            widget: string
+          - hint: >-
+              Original text: Chers amis skieurs et snowboardeurs, comme chaque
+              année, le ski-club de Sierre organise ses traditionnels cours de
+              ski et de snowboard pour les jeunes de 7 à 16 ans, qu’ils soient
+              débutants ou déjà expérimentés., key: -214e2e19
+            label: Text
+            name: '-214e2e19'
+            widget: text
+          - hint: 'Original text: sauver cet OJ dans le calendrier, key: -3093653'
+            label: Text
+            name: '-3093653'
+            widget: string
+          - hint: 'Original text: 200.-, key: 2d722f1'
+            label: Text
+            name: 2d722f1
+            widget: string
+          - hint: 'Original text: Membre, key: -76d887c0'
+            label: Text
+            name: '-76d887c0'
+            widget: string
+          - hint: >-
+              Original text: Par enfant, dont les parents sont membres du
+              Ski-Club de Sierre., key: -6e61210c
+            label: Text
+            name: '-6e61210c'
+            widget: string
+          - hint: 'Original text: Le transport en bus aller retour, key: -127e822a'
+            label: Text
+            name: '-127e822a'
+            widget: string
+          - hint: 'Original text: L’abonnement de ski, key: -350bdf90'
+            label: Text
+            name: '-350bdf90'
+            widget: string
+          - hint: 'Original text: Les cours de ski et snowboard, key: 6a173344'
+            label: Text
+            name: 6a173344
+            widget: string
+          - hint: 'Original text: Repas samedi soir en cabane, key: -5683598c'
+            label: Text
+            name: '-5683598c'
+            widget: string
+          - hint: 'Original text: télécharger l''inscription, key: 5497ee9'
+            label: Text
+            name: 5497ee9
+            widget: string
+          - hint: 'Original text: 250.-, key: 2d968cc'
+            label: Text
+            name: 2d968cc
+            widget: string
+          - hint: 'Original text: Invité, key: -7d28e453'
+            label: Text
+            name: '-7d28e453'
+            widget: string
+          - hint: >-
+              Original text: Pour les enfants dont les parents ne sont pas
+              membres., key: 4011aaf9
+            label: Text
+            name: 4011aaf9
+            widget: string
+          - hint: 'Original text: Bonne ambiance, key: 67a8b94a'
+            label: Text
+            name: 67a8b94a
+            widget: string
+          - hint: >-
+              Original text: Les cours sont organisés les samedis en commencent
+              le 13 janvier 2024. Ils se poursuivent les samedis 20, 27 janvier,
+              le week-end du 3-4 (nuit en cabane) et le 10 février. Le
+              rendez-vous est fixé le samedi 14 janvier 2017 à 9h15 devant les
+              anciennes halles Métalléger (théâtre les Halles) à Sierre. Le
+              départ des bus est fixé à 9h30. Vos enfants doivent être munis du
+              matériel de ski complet, key: 724f233a
+            label: Text
+            name: 724f233a
+            widget: text
+          - hint: >-
+              Original text:  (skis, souliers, bâtons, casque, lunettes, gants,
+              bonnet, pique-nique, etc)., key: 43106983
+            label: Text
+            name: '43106983'
+            widget: string
+          - hint: "Original text:  Le retour est prévu au même endroit, dès 17h15. \_La pause de midi s’effectue dans un restaurant d’altitude accompagné d’un moniteur. Il est possible d’y manger chaud, ou le pique-nique que les enfants auront emporté dans leur sac à dos. Les 3 et 4 février, les enfants ainsi que les moniteurs passent la nuit du samedi à la cabane Bella-Tolla à St- Luc et descendent le dimanche aux alentours de 16h15. Les cours ont lieu dans différentes stations du Valais central, choisies en fonction de l’enneigement., key: -28298ba8"
+            label: Text
+            name: '-28298ba8'
+            widget: text
+          - hint: 'Original text: Pour les , key: 51bc41ea'
+            label: Text
+            name: 51bc41ea
+            widget: string
+          - hint: 'Original text: inscriptions, key: -10028065'
+            label: Text
+            name: '-10028065'
+            widget: string
+          - hint: "Original text: , téléchargez et retournez le talon-réponse ci-dessus à l’adresse suivante: Ski-Club de Sierre, Case Postale 345, 3960 Sierre \_- \_, key: -42f68b5e"
+            label: Text
+            name: '-42f68b5e'
+            widget: text
+          - hint: 'Original text: lea.rinaldi.oj@gmail.com, key: -2ced3ac7'
+            label: Text
+            name: '-2ced3ac7'
+            widget: string
+          - hint: 'Original text: En cliquant sur , key: -5767796a'
+            label: Text
+            name: '-5767796a'
+            widget: string
+          - hint: 'Original text: "Accepter", key: 6af87d0b'
+            label: Text
+            name: 6af87d0b
+            widget: string
+          - hint: >-
+              Original text: , vous acceptez que tous les cookies soient stockés
+              sur votre appareil afin d'améliorer la navigation sur le site,
+              d'analyser l'utilisation du site et de nous aider dans nos efforts
+              de marketing. Consultez notre , key: 1cb658ce
+            label: Text
+            name: 1cb658ce
+            widget: text
+          - hint: 'Original text: politique de confidentialité, key: 6ad7d527'
+            label: Text
+            name: 6ad7d527
+            widget: string
+          - hint: 'Original text:  pour plus d''informations., key: 1442d302'
+            label: Text
+            name: 1442d302
+            widget: string
+          - hint: 'Original text: Préférences, key: -6bfbaf20'
+            label: Text
+            name: '-6bfbaf20'
+            widget: string
+          - hint: 'Original text: Refuser, key: -5c134542'
+            label: Text
+            name: '-5c134542'
+            widget: string
+          - hint: 'Original text: Accepter, key: -7c16fc2b'
+            label: Text
+            name: '-7c16fc2b'
+            widget: string
+          - hint: >-
+              Original text: Centre de préférences pour la politique de
+              protection de la vie privée, key: 2dc7a23e
+            label: Text
+            name: 2dc7a23e
+            widget: string
+          - hint: >-
+              Original text: Lorsque vous visitez des sites web, ceux-ci peuvent
+              stocker ou récupérer des données dans votre navigateur. Ce
+              stockage est souvent nécessaire pour la fonctionnalité de base du
+              site web. Il peut être utilisé à des fins de marketing, d'analyse
+              et de personnalisation du site, par exemple pour enregistrer vos
+              préférences. La protection de la vie privée est importante pour
+              nous, c'est pourquoi vous avez la possibilité de désactiver
+              certains types de stockage qui ne sont pas nécessaires au
+              fonctionnement de base du site web. Le blocage de certaines
+              catégories peut avoir un impact sur votre expérience du site web.,
+              key: 5719b980
+            label: Text
+            name: 5719b980
+            widget: text
+          - hint: 'Original text: Rejeter tous les cookies, key: -1bb35ed1'
+            label: Text
+            name: '-1bb35ed1'
+            widget: string
+          - hint: 'Original text: Accepter tous les cookies, key: -79c29fd3'
+            label: Text
+            name: '-79c29fd3'
+            widget: string
+          - hint: >-
+              Original text: Gérer les préférences en matière de consentement
+              par catégorie, key: 351868e0
+            label: Text
+            name: '351868e0'
+            widget: string
+          - hint: 'Original text: Essentiel, key: 16a393aa'
+            label: Text
+            name: 16a393aa
+            widget: string
+          - hint: 'Original text: Toujours actif, key: -5c954f1a'
+            label: Text
+            name: '-5c954f1a'
+            widget: string
+          - hint: >-
+              Original text: Ces éléments sont nécessaires pour permettre le
+              fonctionnement de base du site web., key: -7b9165df
+            label: Text
+            name: '-7b9165df'
+            widget: string
+          - hint: 'Original text: Marketing, key: 3fc9ea06'
+            label: Text
+            name: 3fc9ea06
+            widget: string
+          - hint: 'Original text: Essential, key: 16a3932e'
+            label: Text
+            name: 16a3932e
+            widget: string
+          - hint: >-
+              Original text: Ces éléments sont utilisés pour diffuser des
+              publicités plus pertinentes pour vous et vos centres d'intérêt.
+              Ils peuvent également être utilisés pour limiter le nombre de fois
+              que vous voyez une publicité et mesurer l'efficacité des campagnes
+              publicitaires. Les réseaux publicitaires les placent généralement
+              avec l'autorisation de l'exploitant du site web., key: -7979fb1e
+            label: Text
+            name: '-7979fb1e'
+            widget: text
+          - hint: 'Original text: Personnalisation, key: 6fc5ea07'
+            label: Text
+            name: 6fc5ea07
+            widget: string
+          - hint: >-
+              Original text: Ces éléments permettent au site web de se souvenir
+              des choix que vous faites (tels que votre nom d'utilisateur, votre
+              langue ou la région dans laquelle vous vous trouvez) et de fournir
+              des fonctions améliorées et plus personnelles. Par exemple, un
+              site web peut vous fournir des bulletins météorologiques locaux ou
+              des informations sur la circulation en stockant des données sur
+              votre position actuelle., key: -1d143c52
+            label: Text
+            name: '-1d143c52'
+            widget: text
+          - hint: 'Original text: Analyse, key: 2fb3f453'
+            label: Text
+            name: 2fb3f453
+            widget: string
+          - hint: >-
+              Original text: Ces éléments aident l'opérateur du site web à
+              comprendre comment son site fonctionne, comment les visiteurs
+              interagissent avec le site et s'il y a des problèmes techniques.
+              Ce type de stockage ne recueille généralement pas d'informations
+              permettant d'identifier un visiteur., key: -46635a4
+            label: Text
+            name: '-46635a4'
+            widget: text
+          - hint: 'Original text: Confirmer mes préférences et fermer, key: -c5b78c0'
+            label: Text
+            name: '-c5b78c0'
+            widget: string
+          - hint: >-
+              Original text: Le système et login CMS ont été mis à jour., key:
+              -41681c3b
+            label: Text
+            name: '-41681c3b'
+            widget: string
+          - hint: >-
+              Original text: Contactez votre admin par email:
+              hello@anthonysalamin.ch, key: 74b609fa
+            label: Text
+            name: 74b609fa
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: >-
+              Original link: https://www.skiclubsierre.ch/#saison-actuelle, key:
+              1c1fcfa9
+            label: Link
+            name: 1c1fcfa9
+            widget: string
+          - hint: >-
+              Original link: https://www.skiclubsierre.ch/#oj-actuel, key:
+              -486aa454
+            label: Link
+            name: '-486aa454'
+            widget: string
+          - hint: 'Original link: /inscriptions, key: -45f44eb6'
+            label: Link
+            name: '-45f44eb6'
+            widget: string
+          - hint: >-
+              Original link:
+              mailto:nmy1986@gmail.com?subject=Ski%20Club%20Sierre, key:
+              571f80ea
+            label: Link
+            name: 571f80ea
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: >-
+              Original link: https://www.skiclubsierre.ch/#saison-actuel, key:
+              148a8e30
+            label: Link
+            name: 148a8e30
+            widget: string
+          - hint: >-
+              Original link: http://ski-club-sierre.webflow.io/archives, key:
+              -376f7241
+            label: Link
+            name: '-376f7241'
+            widget: string
+          - hint: >-
+              Original link: http://ski-club-sierre.webflow.io/#contact-link,
+              key: -1bf8bfe4
+            label: Link
+            name: '-1bf8bfe4'
+            widget: string
+          - hint: >-
+              Original link:
+              https://snow.myswitzerland.com/bulletin_enneigement, key: 2877222e
+            label: Link
+            name: 2877222e
+            widget: string
+          - hint: 'Original link: https://www.slf.ch/fr.html, key: 449f798a'
+            label: Link
+            name: 449f798a
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.meteosuisse.admin.ch/home.html?tab=overview, key:
+              -2000289f
+            label: Link
+            name: '-2000289f'
+            widget: string
+          - hint: 'Original link: http://www.meteo-assistance.ch/, key: 1b6b51e4'
+            label: Link
+            name: 1b6b51e4
+            widget: string
+          - hint: 'Original link: /archives, key: -2dbc66e0'
+            label: Link
+            name: '-2dbc66e0'
+            widget: string
+          - hint: 'Original link: /confidentialite, key: -8d731fd'
+            label: Link
+            name: '-8d731fd'
+            widget: string
+          - hint: 'Original link: /politique-de-confidentialite, key: -196dfc8e'
+            label: Link
+            name: '-196dfc8e'
+            widget: string
+          - hint: 'Original link: https://www.anthonysalamin.ch/, key: 64a1e758'
+            label: Link
+            name: 64a1e758
+            widget: string
+          - hint: >-
+              Original link: https://www.facebook.com/events/215989238838005/,
+              key: -2857e696
+            label: Link
+            name: '-2857e696'
+            widget: string
+          - hint: 'Original link: tel:+41274520290, key: -54f1e5e4'
+            label: Link
+            name: '-54f1e5e4'
+            widget: string
+          - hint: >-
+              Original link:
+              mailto:michel.wyss@gmail.com?subject=Ski-club%20Sierre, key:
+              -53ef078
+            label: Link
+            name: '-53ef078'
+            widget: string
+          - hint: 'Original link: #header-nav, key: -2eee9dba'
+            label: Link
+            name: '-2eee9dba'
+            widget: string
+          - hint: >-
+              Original link:
+              mailto:nmy1986@gmail.com?subject=ski%20club%20Sierre, key:
+              -233376d6
+            label: Link
+            name: '-233376d6'
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.dropbox.com/s/qhwv56j7tf48or9/2017%20-%20Programme%20OJ%20AZ.pdf?dl=0,
+              key: -63d1a244
+            label: Link
+            name: '-63d1a244'
+            widget: string
+          - hint: >-
+              Original link:
+              mailto:lea.rinaldi.oj@gmail.com?subject=Inscription%20%7C%20%20Ski-club%20Sierre,
+              key: -51e96690
+            label: Link
+            name: '-51e96690'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: 463c9f1
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 101ca549
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 214ce0ce
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2a484e45'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 38e1076f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3e8eafca
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3323f87b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 579f23c0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-5726ccf6'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7d9efee1'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 611dd774
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1b9b4f8d
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow
