@@ -1,3 +1,13 @@
+:root {
+  --dodger-blue: #4483ef;
+  --gainsboro: #e2e2e2;
+  --lime-green: #3ad46d;
+  --orange: #ffab16;
+  --red: #ff0004;
+  --white: white;
+  --black: black;
+}
+
 .w-checkbox {
   margin-bottom: 5px;
   padding-left: 20px;
@@ -78,7 +88,7 @@
 }
 
 .cache-sorties {
-  background-color: #4483ef;
+  background-color: var(--dodger-blue);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   flex-direction: column;
@@ -99,7 +109,7 @@
 .link-block {
   width: 80px;
   height: 80px;
-  background-color: #4483ef;
+  background-color: var(--dodger-blue);
   background-image: var(--image-101ca549);
   background-position: 0 0;
   background-size: cover;
@@ -197,7 +207,7 @@
 }
 
 .link-readmore.green {
-  color: #3ad46d;
+  color: var(--lime-green);
 }
 
 .linkblock-read-more-left {
@@ -403,7 +413,7 @@
 }
 
 .link {
-  color: #4483ef;
+  color: var(--dodger-blue);
   text-decoration: none;
 }
 
@@ -530,7 +540,7 @@
 
 .collection-item-8 {
   width: 30%;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid var(--gainsboro);
   margin: 10px;
   padding-top: 0;
   padding-bottom: 20px;
@@ -544,7 +554,7 @@
 
 .search-field {
   height: 80px;
-  border: 2px solid #e2e2e2;
+  border: 2px solid var(--gainsboro);
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 0;
@@ -579,7 +589,7 @@
 }
 
 .heading-archives-sorties {
-  color: #4483ef;
+  color: var(--dodger-blue);
   margin-top: 10px;
   font-size: 18px;
   line-height: 22px;
@@ -645,7 +655,7 @@
 }
 
 .heading-archives-oj {
-  color: #ffab16;
+  color: var(--orange);
   text-transform: capitalize;
   margin-top: 10px;
   font-size: 18px;
@@ -715,7 +725,7 @@
 }
 
 .heading-archives-sorties-copy {
-  color: #4483ef;
+  color: var(--dodger-blue);
   margin-top: 10px;
   font-size: 18px;
   line-height: 22px;
@@ -838,7 +848,7 @@
 }
 
 .link-copyright {
-  color: #4483ef;
+  color: var(--dodger-blue);
   font-weight: 600;
   text-decoration: underline;
 }
@@ -896,7 +906,7 @@
 }
 
 .empty-state-box {
-  color: #ff0004;
+  color: var(--red);
   background-color: rgba(255, 0, 4, .05);
   border-radius: 5px;
 }
@@ -1224,10 +1234,25 @@
 }
 
 .utility-page-content {
-  width: 260px;
+  color: #008353;
   text-align: center;
+  background-color: #e2ffe7;
+  border-radius: 8px;
   flex-direction: column;
+  padding: 60px;
+  font-size: 16px;
+  line-height: 26px;
   display: flex;
+}
+
+.heading-2 {
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.link-2 {
+  color: #3f96ff;
 }
 
 @media screen and (max-width: 991px) {
@@ -1610,7 +1635,7 @@
 
   .collection-item-2 {
     width: 100%;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid var(--gainsboro);
     margin-bottom: 20px;
     padding-bottom: 15px;
     padding-left: 0;

@@ -1924,17 +1924,43 @@ collections:
             label: Text
             name: '-c5b78c0'
             widget: string
-          - hint: >-
-              Original text: Le système et login CMS ont été mis à jour., key:
-              -41681c3b
+          - hint: 'Original text: Nouveau CMS, key: 7973b160'
             label: Text
-            name: '-41681c3b'
+            name: 7973b160
             widget: string
-          - hint: >-
-              Original text: Contactez votre admin par email:
-              hello@anthonysalamin.ch, key: 74b609fa
+          - hint: 'Original text: Vidéo tutorial step by step:, key: -257506a0'
             label: Text
-            name: 74b609fa
+            name: '-257506a0'
+            widget: string
+          - hint: 'Original text: https://vimeo.com/870509809, key: 14d7ba6d'
+            label: Text
+            name: 14d7ba6d
+            widget: string
+          - hint: 'Original text: Mot de passe: Skiclubsierre1234!, key: -51e9bef5'
+            label: Text
+            name: '-51e9bef5'
+            widget: string
+          - hint: 'Original text: URL du CMS: , key: 4936b571'
+            label: Text
+            name: 4936b571
+            widget: string
+          - hint: 'Original text: https://skiclubsierre.ch/admin/, key: -254fc1b6'
+            label: Text
+            name: '-254fc1b6'
+            widget: string
+          - hint: 'Original text: Email: , key: 19673a2'
+            label: Text
+            name: 19673a2
+            widget: string
+          - hint: 'Original text: locate5648@estudys.com, key: -1e6b1c07'
+            label: Text
+            name: '-1e6b1c07'
+            widget: string
+          - hint: |-
+              Original text: Mot de passe: Skiclubsierre1234!
+                    , key: 59a6e91f
+            label: Text
+            name: 59a6e91f
             widget: string
       - label: Links
         name: links
@@ -1960,9 +1986,9 @@ collections:
             label: Link
             name: '-486aa454'
             widget: string
-          - hint: 'Original link: /inscriptions, key: -45f44eb6'
+          - hint: 'Original link: /inscriptions/, key: -789587db'
             label: Link
-            name: '-45f44eb6'
+            name: '-789587db'
             widget: string
           - hint: >-
               Original link:
@@ -2022,9 +2048,9 @@ collections:
             label: Link
             name: '-8d731fd'
             widget: string
-          - hint: 'Original link: /politique-de-confidentialite, key: -196dfc8e'
+          - hint: 'Original link: /politique-de-confidentialite/, key: -14519503'
             label: Link
-            name: '-196dfc8e'
+            name: '-14519503'
             widget: string
           - hint: 'Original link: https://www.anthonysalamin.ch/, key: 64a1e758'
             label: Link
@@ -2071,6 +2097,18 @@ collections:
               key: -51e96690
             label: Link
             name: '-51e96690'
+            widget: string
+          - hint: 'Original link: https://vimeo.com/870509809, key: 14d7ba6d'
+            label: Link
+            name: 14d7ba6d
+            widget: string
+          - hint: 'Original link: https://skiclubsierre.ch/admin/#/, key: -106627ca'
+            label: Link
+            name: '-106627ca'
+            widget: string
+          - hint: 'Original link: mailto:locate5648@estudys.com, key: -47785ff'
+            label: Link
+            name: '-47785ff'
             widget: string
       - label: Images
         name: images
