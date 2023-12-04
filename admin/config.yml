@@ -190,6 +190,19 @@ collections:
         required: false
         default: false
       - hint: ''
+        name: f_couleur
+        label: couleur
+        widget: relation
+        required: false
+        collection: couleurs
+        value_field: cms/couleurs/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: false
+      - hint: ''
         name: f_lien-calendrier-google
         label: lien calendrier Google
         widget: string
@@ -226,19 +239,6 @@ collections:
         label: 'checklist #2'
         widget: string
         required: false
-      - hint: ''
-        name: f_couleur
-        label: couleur
-        widget: relation
-        required: false
-        collection: couleurs
-        value_field: cms/couleurs/{{slug}}.md
-        search_fields:
-          - slug
-          - name
-        display_fields:
-          - title
-        multiple: false
       - hint: ''
         name: f_image-1
         label: image 1
@@ -553,73 +553,6 @@ collections:
         widget: hidden
         name: layout
         default: '[sorties].html'
-      - label: Publish Date
-        name: date
-        widget: datetime
-      - *ref_0
-  - name: auteurs
-    label: Auteurs
-    folder: cms/auteurs
-    create: true
-    identifier_field: name
-    extension: md
-    slug: '{{slug}}'
-    fields:
-      - hint: ''
-        name: title
-        label: Name
-        widget: string
-        required: true
-      - hint: ''
-        name: created-on
-        label: Created On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: updated-on
-        label: Updated On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: published-on
-        label: Published On
-        widget: datetime
-        required: false
-      - hint: ''
-        name: f_photo-miniature
-        label: photo miniature
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_adresse-email
-        label: adresse email
-        widget: string
-        required: false
-      - hint: ''
-        name: f_numero-de-telephone
-        label: numéro de téléphone
-        widget: string
-        required: false
-      - label: Tags
-        widget: hidden
-        name: tags
-        default: auteurs
-      - label: Layout
-        widget: hidden
-        name: layout
-        default: '[auteurs].html'
       - label: Publish Date
         name: date
         widget: datetime
@@ -1594,9 +1527,11 @@ collections:
             label: Text
             name: 1549a127
             widget: string
-          - hint: 'Original text: ©️ 2023 Ski-club Sierre, key: -57edfce3'
+          - hint: >-
+              Original text: ©️ 2023 Ski-club Sierre, Sponsorisé par la Ville de
+              Sierre, key: -36ca3b1b
             label: Text
-            name: '-57edfce3'
+            name: '-36ca3b1b'
             widget: string
           - hint: 'Original text: No items found., key: 3d503d2b'
             label: Text
@@ -1700,9 +1635,9 @@ collections:
             label: Text
             name: '-3093653'
             widget: string
-          - hint: 'Original text: 200.-, key: 2d722f1'
+          - hint: 'Original text: 240.-, key: 2d8f46d'
             label: Text
-            name: 2d722f1
+            name: 2d8f46d
             widget: string
           - hint: 'Original text: Membre, key: -76d887c0'
             label: Text
@@ -1710,10 +1645,11 @@ collections:
             widget: string
           - hint: >-
               Original text: Par enfant, dont les parents sont membres du
-              Ski-Club de Sierre., key: -6e61210c
+              Ski-Club de Sierre. Le prix passe à 200.- pour les enfants
+              détenteurs du Magic pass., key: 22a0187c
             label: Text
-            name: '-6e61210c'
-            widget: string
+            name: 22a0187c
+            widget: text
           - hint: 'Original text: Le transport en bus aller retour, key: -127e822a'
             label: Text
             name: '-127e822a'
@@ -1734,9 +1670,9 @@ collections:
             label: Text
             name: 5497ee9
             widget: string
-          - hint: 'Original text: 250.-, key: 2d968cc'
+          - hint: 'Original text: 280.-, key: 2dac5e9'
             label: Text
-            name: 2d968cc
+            name: 2dac5e9
             widget: string
           - hint: 'Original text: Invité, key: -7d28e453'
             label: Text
@@ -1744,10 +1680,11 @@ collections:
             widget: string
           - hint: >-
               Original text: Pour les enfants dont les parents ne sont pas
-              membres., key: 4011aaf9
+              membres. Le prix passe à 240.- pour les enfants détenteurs du
+              Magic pass., key: -6442f1e5
             label: Text
-            name: 4011aaf9
-            widget: string
+            name: '-6442f1e5'
+            widget: text
           - hint: 'Original text: Bonne ambiance, key: 67a8b94a'
             label: Text
             name: 67a8b94a
@@ -1756,12 +1693,12 @@ collections:
               Original text: Les cours sont organisés les samedis en commencent
               le 13 janvier 2024. Ils se poursuivent les samedis 20, 27 janvier,
               le week-end du 3-4 (nuit en cabane) et le 10 février. Le
-              rendez-vous est fixé le samedi 14 janvier 2017 à 9h15 devant les
+              rendez-vous est fixé le samedi 13 janvier 2024 à 9h15 devant les
               anciennes halles Métalléger (théâtre les Halles) à Sierre. Le
               départ des bus est fixé à 9h30. Vos enfants doivent être munis du
-              matériel de ski complet, key: 724f233a
+              matériel de ski complet, key: 62201d77
             label: Text
-            name: 724f233a
+            name: 62201d77
             widget: text
           - hint: >-
               Original text:  (skis, souliers, bâtons, casque, lunettes, gants,
@@ -1773,17 +1710,17 @@ collections:
             label: Text
             name: '-28298ba8'
             widget: text
-          - hint: 'Original text: Pour les , key: 51bc41ea'
+          - hint: 'Original text: POUR LES , key: -7ddaddd6'
             label: Text
-            name: 51bc41ea
+            name: '-7ddaddd6'
             widget: string
-          - hint: 'Original text: inscriptions, key: -10028065'
+          - hint: 'Original text: INSCRIPTIONS, key: 7a1c679b'
             label: Text
-            name: '-10028065'
+            name: 7a1c679b
             widget: string
-          - hint: "Original text: , téléchargez et retournez le talon-réponse ci-dessus à l’adresse suivante: Ski-Club de Sierre, Case Postale 345, 3960 Sierre \_- \_, key: -42f68b5e"
+          - hint: "Original text: , TÉLÉCHARGEZ ET RETOURNEZ LE TALON-RÉPONSE CI-DESSUS À L’ADRESSE SUIVANTE: SKI-CLUB DE SIERRE, CASE POSTALE 345, 3960 SIERRE \_-\_, key: -5afaac22"
             label: Text
-            name: '-42f68b5e'
+            name: '-5afaac22'
             widget: text
           - hint: 'Original text: lea.rinaldi.oj@gmail.com, key: -2ced3ac7'
             label: Text
@@ -1992,10 +1929,10 @@ collections:
             widget: string
           - hint: >-
               Original link:
-              mailto:nmy1986@gmail.com?subject=Ski%20Club%20Sierre, key:
-              571f80ea
+              mailto:lea.rinaldi.oj@gmail.com?subject=Ski%20Club%20Sierre, key:
+              6d673282
             label: Link
-            name: 571f80ea
+            name: 6d673282
             widget: string
           - hint: 'Original link: #, key: 23'
             label: Link
@@ -2052,9 +1989,15 @@ collections:
             label: Link
             name: '-14519503'
             widget: string
-          - hint: 'Original link: https://www.anthonysalamin.ch/, key: 64a1e758'
+          - hint: 'Original link: https://www.slf.ch/fr/, key: -2807c6a0'
             label: Link
-            name: 64a1e758
+            name: '-2807c6a0'
+            widget: string
+          - hint: >-
+              Original link: https://www.meteosuisse.admin.ch/#tab=forecast-map,
+              key: -7e1362e6
+            label: Link
+            name: '-7e1362e6'
             widget: string
           - hint: >-
               Original link: https://www.facebook.com/events/215989238838005/,

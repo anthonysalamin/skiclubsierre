@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html data-wf-page="5bcf068a1a6ecccf9fb226d8" data-wf-site="5b9276a9170f2376e1047467" lang="fr"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com">
+<html data-wf-page="5bcf068a1a6ecccf9fb226d8" data-wf-site="5b9276a9170f2376e1047467" lang="fr"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com">{%- seo seo -%}
   <meta charset="utf-8">
-  <title>Ski-club Sierre</title>
-  <meta content="Le ski-club Sierre vous souhaite la bienvenue sur son site. Sorties, cours OJ, photos et documents d'inscriptions, tout s'y trouve !" name="description">
+  
+  
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="/assets/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="/assets/css/components.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@
         <a href="{{ links.1c1fcfa9 }}" class="nav-link">{{ texts.79f1e42d }}</a>
         <a href="{{ links.-486aa454 }}" class="nav-link">{{ texts.-2cd2b3dc }}</a>
         <a href="{{ links.-789587db }}" class="nav-link">{{ texts.-6372c45 }}</a>
-        <a href="{{ links.571f80ea }}" class="nav-link">{{ texts.-64104400 }}</a>
+        <a href="{{ links.6d673282 }}" class="nav-link">{{ texts.-64104400 }}</a>
       </div>
       <a href="{{ links.23 }}" data-w-id="c6ef314a-0dfd-0d55-9ac1-ab81aba5b710" class="ico-menu w-inline-block"><img src="{{ images.38e1076f.url }}" alt="{{ images.38e1076f.alt | trim | escape }}"></a>
     </div>
@@ -71,7 +71,7 @@
     </div>
   </div>
   <div class="section-sorties">
-    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,eq,true", "ALL", page.inputPath | sort: "f_date" | limit: 3 -%}<div class="cl-wrapper-sorties-feat-desktop w-dyn-list">
+    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,eq,true", "ALL", page.inputPath | limit: 3 -%}<div class="cl-wrapper-sorties-feat-desktop w-dyn-list">
       {%- unless collection.length == 0 -%}<div role="list" class="collection-list w-clearfix w-dyn-items">
         {%- for item in collection -%}<div role="listitem" class="collection-item w-dyn-item">
           <div class="wrapper-shadow">
@@ -195,8 +195,8 @@
   </div>
   <div class="section-oj">
     <div class="container-max-980px">
-      <h1 id="oj-actuel" class="heading-section align-center">{{ texts.-2cd2b3dc }}</h1>
-      <p class="paragraph-2">{{ texts.-214e2e19 }}</p>
+      <h1 id="oj-actuel" class="heading-section align-center">{{ texts.9db }}</h1>
+      <p class="paragraph-2">{{ texts.-214e2e19 }}<br></p>
       {%- assign collection = collections.oj | filter: "f_saison-actuelle,eq,true", "ALL", page.inputPath | sort: "f_date" -%}<div class="cl-wrapper-oj-all w-dyn-list">
         {%- unless collection.length == 0 -%}<div role="list" class="w-clearfix w-dyn-items w-row">
           {%- for item in collection -%}<div role="listitem" class="collection-item-2 w-dyn-item w-col w-col-4">
@@ -232,11 +232,11 @@
       <div class="wrapper-two-divs">
         <div class="div-wrapper-membre">
           <div class="div-bg-oj">
-            <h3 class="heading-pricing-oj">{{ texts.2d722f1 }}</h3>
+            <h3 class="heading-pricing-oj">{{ texts.2d8f46d }}</h3>
           </div>
           <div class="div-bg-white-oj">
             <h4 class="heading-category-oj">{{ texts.-76d887c0 }}</h4>
-            <p>{{ texts.-6e61210c }}</p>
+            <p>{{ texts.22a0187c }}</p>
             <div class="wrapper-list">
               <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
                 <div class="text-checklist">{{ texts.-127e822a }}</div>
@@ -258,11 +258,11 @@
         </div>
         <div class="div-wrapper-membre">
           <div class="div-bg-oj">
-            <h3 class="heading-pricing-oj">{{ texts.2d968cc }}</h3>
+            <h3 class="heading-pricing-oj">{{ texts.2dac5e9 }}</h3>
           </div>
           <div class="div-bg-white-oj">
             <h4 class="heading-category-oj">{{ texts.-7d28e453 }}</h4>
-            <p>{{ texts.4011aaf9 }}</p>
+            <p>{{ texts.-6442f1e5 }}</p>
             <div class="wrapper-list">
               <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
                 <div class="text-checklist">{{ texts.-127e822a }}</div>
@@ -285,13 +285,13 @@
       </div>
     </div>
     <div class="container-max-980px">
-      <p class="paragraph-conditions">{{ texts.724f233a }}<strong>{{ texts.43106983 }}</strong>{{ texts.-28298ba8 }}</p>
+      <p class="paragraph-conditions">{{ texts.62201d77 }}<strong>{{ texts.43106983 }}</strong>{{ texts.-28298ba8 }}</p>
       <div class="div-block-2">
         <a href="{{ links.-63d1a244 }}" target="_blank" class="cta-save-calendar width-auto w-inline-block">
           <div>{{ texts.5497ee9 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" class="ico-arrow-down">
         </a>
       </div>
-      <p class="paragraph-allcaps">{{ texts.51bc41ea }}<strong>{{ texts.-10028065 }}</strong>{{ texts.-42f68b5e }}<a href="{{ links.-51e96690 }}" class="link">{{ texts.-2ced3ac7 }}</a>
+      <p class="paragraph-allcaps">{{ texts.-7ddaddd6 }}<strong>{{ texts.7a1c679b }}</strong>{{ texts.-5afaac22 }}<a href="{{ links.-51e96690 }}" class="link">{{ texts.-2ced3ac7 }}</a>
       </p>
     </div>
   </div>
@@ -299,8 +299,8 @@
     <div class="wrapper-footer-menu">
       <div class="container-wrapper-footer-menu">
         <div class="wrapper-menu-footer">
-          <a href="{{ links.449f798a }}" target="_blank" class="link-footer-nav">{{ texts.-6657af4d }}</a>
-          <a href="{{ links.-2000289f }}" target="_blank" class="link-footer-nav">{{ texts.597eaac0 }}</a>
+          <a href="{{ links.-2807c6a0 }}" target="_blank" class="link-footer-nav">{{ texts.-6657af4d }}</a>
+          <a href="{{ links.-7e1362e6 }}" target="_blank" class="link-footer-nav">{{ texts.597eaac0 }}</a>
         </div>
         <div class="wrapper-menu-footer">
           <a href="{{ links.-789587db }}" class="link-footer-nav">{{ texts.-6372c45 }}</a>
@@ -315,8 +315,7 @@
         <div class="wrapper-footer-logo-copyright">
           <div class="wrapper-footer-logo-copyright">
             <div class="wrapper-infos-facebook">
-              <div class="text-copyright">{{ texts.-57edfce3 }}<a href="{{ links.64a1e758 }}" target="_blank" class="link-copyright"></a>
-              </div>
+              <div class="text-copyright">{{ texts.-36ca3b1b }}</div>
               <div class="wrapper-copyright-logo-fb">
                 <div class="html-embed-facebook w-embed">
                   <div class="fb-like" data-href="https://www.facebook.com/tlhsierre/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
