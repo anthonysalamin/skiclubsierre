@@ -8,6 +8,7 @@ f_date: 2024-01-07T09:29:08.483Z
 f_texte-2: Les informations précises de la sortie suivront
 f_featuring-2: true
 f_featuring: true
+f_couleur: cms/couleurs/sortie.md
 tags: sorties
 layout: "[sorties].html"
 date: 2023-12-06T09:29:08.527Z
