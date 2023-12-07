@@ -450,6 +450,11 @@
   line-height: 30px;
 }
 
+.heading-category-oj {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
 .all-sorties-mobile {
   display: none;
 }
@@ -1253,6 +1258,11 @@
 
 .link-2 {
   color: #3f96ff;
+}
+
+.collection-list-6 {
+  flex-wrap: wrap;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {

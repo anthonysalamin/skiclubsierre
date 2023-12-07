@@ -152,11 +152,16 @@ collections:
         label: Published On
         widget: datetime
         required: false
-      - hint: selectionner la saison à laquelle appartient la sortie
+      - hint: ''
+        name: f_date
+        label: Date
+        widget: datetime
+        required: true
+      - hint: Selectionner la saison à laquelle appartient la sortie
         name: f_saison-3
-        label: saison
+        label: Saison
         widget: relation
-        required: false
+        required: true
         collection: category
         value_field: cms/category/{{slug}}.md
         search_fields:
@@ -165,35 +170,27 @@ collections:
         display_fields:
           - title
         multiple: false
-      - hint: ''
-        name: f_date
-        label: date
-        widget: datetime
-        required: false
-      - hint: ''
-        name: f_texte-2
-        label: texte
-        widget: string
-        required: false
-      - hint: 'cette sortie est-elle en "featuring" sur la page d''acceuil ? '
-        name: f_featuring-2
-        label: featuring
-        widget: boolean
-        required: false
-        default: false
       - hint: >-
           cette sortie fait-elle partie de la saison actuelle ? Si oui, activer
           le switch. 
         name: f_featuring
-        label: saison actuelle
+        label: Saison actuelle ?
         widget: boolean
         required: false
         default: false
-      - hint: ''
-        name: f_couleur
-        label: couleur
-        widget: relation
+      - hint: >-
+          Cette sortie est-elle en "featuring" sur la page d'acceuil ? Si oui,
+          activer le switch.
+        name: f_featuring-2
+        label: En featuring sur la page d'acceuil ?
+        widget: boolean
         required: false
+        default: false
+      - hint: Choisir soit "Sorties", soit "OJ"
+        name: f_couleur
+        label: Couleur
+        widget: relation
+        required: true
         collection: couleurs
         value_field: cms/couleurs/{{slug}}.md
         search_fields:
@@ -203,18 +200,13 @@ collections:
           - title
         multiple: false
       - hint: ''
-        name: f_lien-calendrier-google
-        label: lien calendrier Google
+        name: f_texte-2
+        label: Description
         widget: string
-        required: false
-      - hint: lien dropbox du fichier contenenant toutes les photos de la sortie
-        name: f_dropbox-images
-        label: lien dropbox images
-        widget: string
-        required: false
+        required: true
       - hint: ''
         name: f_image-miniature
-        label: image miniature
+        label: Image miniature
         widget: object
         required: false
         fields:
@@ -231,307 +223,18 @@ collections:
             required: false
       - hint: ''
         name: f_checklist-1
-        label: 'checklist #1'
+        label: 'Hashtag #1'
         widget: string
         required: false
       - hint: ''
         name: f_checklist-2
-        label: 'checklist #2'
+        label: 'Hashtag #2'
         widget: string
         required: false
       - hint: ''
-        name: f_image-1
-        label: image 1
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-2
-        label: image 2
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-3
-        label: image 3
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-4
-        label: image 4
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-5
-        label: image 5
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-6
-        label: image 6
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-7
-        label: image 7
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-8
-        label: image 8
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-9
-        label: image 9
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-10
-        label: image 10
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-11
-        label: image 11
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-12
-        label: image 12
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-13
-        label: image 13
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-14
-        label: image 14
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-15
-        label: image 15
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-16
-        label: image 16
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-17
-        label: image 17
-        widget: object
-        required: false
-        fields:
-          - hint: ''
-            name: url
-            label: Image
-            widget: image
-            required: false
-            allow_multiple: false
-          - hint: Image Alt
-            name: alt
-            label: alt
-            widget: string
-            required: false
-      - hint: ''
-        name: f_image-18
-        label: image 18
-        widget: object
+        name: f_images-de-la-sortie
+        label: Images de la sortie
+        widget: list
         required: false
         fields:
           - hint: ''
@@ -1280,13 +983,13 @@ collections:
             name: title
             widget: hidden
             default: Texts
-          - hint: 'Original text: Sorties 22 - 23, key: 79f1e42d'
+          - hint: 'Original text: Sorties, key: -157413a7'
             label: Text
-            name: 79f1e42d
+            name: '-157413a7'
             widget: string
-          - hint: 'Original text: OJ 2023, key: -2cd2b3dc'
+          - hint: 'Original text: OJ, key: 9db'
             label: Text
-            name: '-2cd2b3dc'
+            name: 9db
             widget: string
           - hint: 'Original text: Inscriptions, key: -6372c45'
             label: Text
@@ -1537,10 +1240,6 @@ collections:
             label: Text
             name: 3d503d2b
             widget: string
-          - hint: 'Original text: Sorties, key: -157413a7'
-            label: Text
-            name: '-157413a7'
-            widget: string
           - hint: 'Original text: Saison , key: -2dd71cf7'
             label: Text
             name: '-2dd71cf7'
@@ -1548,16 +1247,6 @@ collections:
           - hint: 'Original text: le, key: d79'
             label: Text
             name: d79
-            widget: string
-          - hint: 'Original text: sauver dans le calendrier, key: -25d7d662'
-            label: Text
-            name: '-25d7d662'
-            widget: string
-          - hint: >-
-              Original text: Téléchargez toutes les photos de cette sortie
-              depuis notre Dropbox., key: -795694fb
-            label: Text
-            name: '-795694fb'
             widget: string
           - hint: 'Original text: Autres sorties de la saison:, key: -7d0e68f0'
             label: Text
@@ -1567,17 +1256,13 @@ collections:
             label: Text
             name: 5befbd78
             widget: string
-          - hint: 'Original text: nmy1986@gmail.com, key: 53beaeb1'
-            label: Text
-            name: 53beaeb1
-            widget: string
-          - hint: 'Original text: OJ, key: 9db'
-            label: Text
-            name: 9db
-            widget: string
           - hint: 'Original text: Saison, key: -6cd56409'
             label: Text
             name: '-6cd56409'
+            widget: string
+          - hint: 'Original text: sauver dans le calendrier, key: -25d7d662'
+            label: Text
+            name: '-25d7d662'
             widget: string
           - hint: "Original text: Téléchargez toutes les photos de cet OJ\_depuis notre Dropbox., key: -44f350c9"
             label: Text
@@ -1587,15 +1272,9 @@ collections:
             label: Text
             name: 15ef618c
             widget: string
-          - hint: 'Original text: ERR_STRIPE, key: -30504379'
+          - hint: 'Original text: nmy1986@gmail.com, key: 53beaeb1'
             label: Text
-            name: '-30504379'
-            widget: string
-          - hint: >-
-              Original text:  (card not found) Contactez votre administrateur
-              technique., key: -52cee81b
-            label: Text
-            name: '-52cee81b'
+            name: 53beaeb1
             widget: string
           - hint: 'Original text: lire d''avantage, key: -2a1932e0'
             label: Text
@@ -1608,10 +1287,6 @@ collections:
           - hint: 'Original text: ... informations, key: 49563139'
             label: Text
             name: '49563139'
-            widget: string
-          - hint: 'Original text: sauver la sortie dans le calendrier, key: dd05459'
-            label: Text
-            name: dd05459
             widget: string
           - hint: >-
               Original text: Aucune sortie de la saison actuelle n'est à
@@ -1631,10 +1306,6 @@ collections:
             label: Text
             name: '-214e2e19'
             widget: text
-          - hint: 'Original text: sauver cet OJ dans le calendrier, key: -3093653'
-            label: Text
-            name: '-3093653'
-            widget: string
           - hint: 'Original text: 240.-, key: 2d8f46d'
             label: Text
             name: 2d8f46d

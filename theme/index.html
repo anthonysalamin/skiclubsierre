@@ -24,17 +24,12 @@
             aspect-ratio: 16 / 9;
         }</style></head>
 <body class="body">
-  <div class="error-payment">
-    <div class="div-block-6">
-      <p class="paragraph"><strong>{{ texts.-30504379 }}</strong>{{ texts.-52cee81b }}</p>
-    </div>
-  </div>
   <div id="header-nav" class="section-nav">
     <div class="wrapper">
       <a href="{{ links.2f }}" aria-current="page" class="ico-logo-home w-inline-block w--current"><img src="{{ images.-2a484e45.url }}" alt="{{ images.-2a484e45.alt | trim | escape }}" class="logo"></a>
       <div class="wrapper-nav-desktop">
-        <a href="{{ links.1c1fcfa9 }}" class="nav-link">{{ texts.79f1e42d }}</a>
-        <a href="{{ links.-486aa454 }}" class="nav-link">{{ texts.-2cd2b3dc }}</a>
+        <a href="{{ links.1c1fcfa9 }}" class="nav-link">{{ texts.-157413a7 }}</a>
+        <a href="{{ links.-486aa454 }}" class="nav-link">{{ texts.9db }}</a>
         <a href="{{ links.-789587db }}" class="nav-link">{{ texts.-6372c45 }}</a>
         <a href="{{ links.6d673282 }}" class="nav-link">{{ texts.-64104400 }}</a>
       </div>
@@ -71,7 +66,7 @@
     </div>
   </div>
   <div class="section-sorties">
-    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,eq,true", "ALL", page.inputPath | limit: 3 -%}<div class="cl-wrapper-sorties-feat-desktop w-dyn-list">
+    {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,eq,true", "ALL", page.inputPath | sort: "f_date" | limit: 3 -%}<div class="cl-wrapper-sorties-feat-desktop w-dyn-list">
       {%- unless collection.length == 0 -%}<div role="list" class="collection-list w-clearfix w-dyn-items">
         {%- for item in collection -%}<div role="listitem" class="collection-item w-dyn-item">
           <div class="wrapper-shadow">
@@ -88,9 +83,6 @@
               <p class="paragraph-showcased">{{ item.data.f_texte-2 }}</p>
               <a href="{{ item.url }}" class="linkblock-read-more-center w-inline-block">
                 <div class="link-readmore">{{ texts.-2a1932e0 }}</div><img src="{{ images.611dd774.url }}" alt="{{ images.611dd774.alt | trim | escape }}" loading="lazy" class="ico-arrow-right">
-              </a>
-              <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block">
-                <div>{{ texts.-25d7d662 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
               </a>
             </div>
           </div>
@@ -118,9 +110,6 @@
               <a href="{{ item.url }}" class="linkblock-read-more-center w-inline-block">
                 <div class="link-readmore">{{ texts.-32836092 }}</div><img src="{{ images.611dd774.url }}" alt="{{ images.611dd774.alt | trim | escape }}" class="ico-arrow-right">
               </a>
-              <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block w-clearfix">
-                <div class="text-cta">{{ texts.-25d7d662 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" class="ico-arrow-down">
-              </a>
             </div>
           </div>
         </div>{%- endfor -%}
@@ -130,11 +119,12 @@
       </div>{%- endif -%}
     </div>
     {%- assign collection = collections.sorties | filter: "f_featuring,eq,true; f_featuring-2,ne,true", "ALL", page.inputPath | sort: "f_date" -%}<div id="saison-actuelle" class="cl-wrapper-sorties-all-desktop w-dyn-list">
-      {%- unless collection.length == 0 -%}<div role="list" class="w-clearfix w-dyn-items w-row">
+      {%- unless collection.length == 0 -%}<div role="list" class="collection-list-6 w-clearfix w-dyn-items w-row">
         {%- for item in collection -%}<div role="listitem" class="collection-item-2 w-dyn-item w-col w-col-4">
           <div class="wrapper-2 w-clearfix">
             {%- assign couleursOfSorties = item.data.f_couleur | resolveReference -%}<a href="{{ item.url }}" class="linkblock-thumb-additonal-event w-inline-block" style="border-color: {{couleursOfSorties.data.f_sorties}};"></a>
             <div class="wrapper-title-date-journal">
+              <div class="title-journal">{{ item.data.f_date | formatDate: "MMMM d, yyyy" }}</div>
               <div class="title-journal">{{ item.data.title }}</div>
               <div class="wrapper-le-date">
                 <div class="date-additional-event">{{ texts.d79 }}</div>
@@ -150,9 +140,6 @@
               </div>
             </div>
           </div>
-          <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block">
-            <div>{{ texts.dd05459 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
-          </a>
         </div>{%- endfor -%}
       </div>{%- endunless -%}
       {%- if collection.length == 0 -%}<div class="empty-state-box w-dyn-empty">
@@ -180,11 +167,6 @@
                 </a>
               </div>
             </div>
-          </div>
-          <div class="wrapper-3">
-            <a href="{{ item.data.f_lien-calendrier-google }}" class="cta-save-calendar w-inline-block">
-              <div class="link-readmore green">{{ texts.dd05459 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" class="ico-arrow-down">
-            </a>
           </div>
         </div>{%- endfor -%}
       </div>{%- endunless -%}
@@ -218,9 +200,6 @@
                 </div>
               </div>
             </div>
-            <a href="{{ item.data.f_lien-google-calendar }}" class="cta-save-calendar w-inline-block">
-              <div>{{ texts.-3093653 }}</div><img src="{{ images.-5726ccf6.url }}" alt="{{ images.-5726ccf6.alt | trim | escape }}" loading="lazy" class="ico-arrow-down">
-            </a>
           </div>{%- endfor -%}
         </div>{%- endunless -%}
         {%- if collection.length == 0 -%}<div class="w-dyn-empty">
@@ -232,10 +211,10 @@
       <div class="wrapper-two-divs">
         <div class="div-wrapper-membre">
           <div class="div-bg-oj">
-            <h3 class="heading-pricing-oj">{{ texts.2d8f46d }}</h3>
+            <div class="heading-pricing-oj">{{ texts.2d8f46d }}</div>
           </div>
           <div class="div-bg-white-oj">
-            <h4 class="heading-category-oj">{{ texts.-76d887c0 }}</h4>
+            <div class="heading-category-oj">{{ texts.-76d887c0 }}</div>
             <p>{{ texts.22a0187c }}</p>
             <div class="wrapper-list">
               <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
@@ -258,10 +237,10 @@
         </div>
         <div class="div-wrapper-membre">
           <div class="div-bg-oj">
-            <h3 class="heading-pricing-oj">{{ texts.2dac5e9 }}</h3>
+            <div class="heading-pricing-oj">{{ texts.2dac5e9 }}</div>
           </div>
           <div class="div-bg-white-oj">
-            <h4 class="heading-category-oj">{{ texts.-7d28e453 }}</h4>
+            <div class="heading-category-oj">{{ texts.-7d28e453 }}</div>
             <p>{{ texts.-6442f1e5 }}</p>
             <div class="wrapper-list">
               <div class="wrapper-list-item"><img src="{{ images.1b9b4f8d.url }}" alt="{{ images.1b9b4f8d.alt | trim | escape }}" loading="lazy" class="ico-tick">
