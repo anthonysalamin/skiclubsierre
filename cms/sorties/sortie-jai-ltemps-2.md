@@ -2,7 +2,7 @@
 created-on: 2023-12-07T04:01:25.613Z
 f_date: 2024-02-08T00:00:00.000Z
 f_couleur: cms/couleurs/sortie.md
-f_texte-2: es informations sur la sortie suivront
+f_texte-2: Les informations sur la sortie suivront
 layout: "[sorties].html"
 slug: sortie-jai-ltemps-2
 title: "Sortie J'ai l'temps #2"
