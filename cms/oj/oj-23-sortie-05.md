@@ -1,10 +1,10 @@
 ---
-title: OJ 25 - Sortie 03 - Week-end
+title: OJ 25 - Sortie 03+04 - Week-end
 created-on: 2022-11-24T00:05:56.675Z
 published-on: 2022-11-24T00:06:27.323Z
 f_saison-actuelle: true
 f_date: 2025-01-25T08:00:00.000Z
-f_texte: Troisième sortie OJ.
+f_texte: "Troisième et quatrième sortie OJ : Samedi et Dimanche."
 tags: oj
 layout: "[oj].html"
 slug: oj-23-sortie-05
