@@ -3,7 +3,7 @@ title: OJ 25 - sortie 01
 created-on: 2022-11-24T00:03:51.355Z
 published-on: 2022-11-24T00:06:27.323Z
 f_saison-actuelle: true
-f_date: 2025-01-11T06:45:01.160Z
+f_date: 2025-01-11T08:30:01.160Z
 f_texte: Première sortie OJ.
 tags: oj
 layout: "[oj].html"
