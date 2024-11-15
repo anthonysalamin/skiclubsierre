@@ -8,4 +8,4 @@ published-on: 2023-12-07T04:15:33.456Z
 tags: annonce
 date: 2024-05-24T14:52:10.384Z
 ---
-Le Ski-Club de Sierre vous souhaite une excellente saison 2024. Prochains évènements du club: - 01 Juin 2024 - Sortie Finale !
+Le Ski-Club de Sierre vous souhaite une excellente saison 2025. La listes des sorties et événements est ci-dessous. Les informations serons publiés 1 à 2 semaines  l'avance. À bientôt !
