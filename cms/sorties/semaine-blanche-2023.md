@@ -8,7 +8,7 @@ f_featuring: true
 f_featuring-2: false
 f_couleur: cms/couleurs/sortie.md
 f_texte-2: Les informations sur la semaine blanche suivront. Elle se passera du
-  19.03 au 22.03
+  19.03 au 22.03.
 tags: sorties
 layout: "[sorties].html"
 slug: semaine-blanche-2023
