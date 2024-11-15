@@ -2,7 +2,7 @@
 title: Concours inter Ski-Club
 created-on: 2022-11-23T23:33:45.465Z
 published-on: 2023-12-07T04:15:33.456Z
-f_date: 2025-02-15T00:00:00.000Z
+f_date: 2025-02-15T08:00:00.000Z
 f_saison-3: cms/category/2024-2025.md
 f_featuring: true
 f_featuring-2: false
