@@ -1,8 +1,8 @@
 ---
 title: Semaine Blanche
 created-on: 2023-12-07T03:53:53.749Z
-published-on: 2025-03-19T08:00:33.456Z
-f_date: 2024-03-16T00:00:00.000Z
+published-on: 2024-11-15T19:42:45.547Z
+f_date: 2025-03-19T08:00:00.000Z
 f_saison-3: cms/category/2024-2025.md
 f_featuring: true
 f_featuring-2: false
