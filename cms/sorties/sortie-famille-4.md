@@ -1,5 +1,5 @@
 ---
-title: Sortie Loto - Salle de gym de Muraz.
+title: Sortie Loto - Salle de gym de Muraz
 created-on: 2022-11-23T23:27:24.954Z
 updated-on: 2024-11-15T19:37:57.901Z
 published-on: 2024-11-15T19:35:33.404Z
