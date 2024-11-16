@@ -2,7 +2,7 @@
 title: Assemblée générale et souper annuel
 created-on: 2022-11-23T23:25:47.603Z
 published-on: 2023-12-07T04:15:33.456Z
-f_date: 2025-11-08T08:00:00.000Z
+f_date: 2025-11-15T17:00:55.981Z
 f_saison-3: cms/category/2024-2025.md
 f_featuring: true
 f_featuring-2: false
