@@ -5,7 +5,7 @@ published-on: 2023-12-07T04:15:33.456Z
 f_date: 2024-12-07T08:00:00.000Z
 f_saison-3: cms/category/2024-2025.md
 f_featuring: true
-f_featuring-2: true
+f_featuring-2: false
 f_couleur: cms/couleurs/sortie.md
 f_texte-2: Chères et chers membres,  Le mois de décembre est arrivé, ce qui
   signifie le retour tant attendu de la saison de ski et de nos sorties! Comme
