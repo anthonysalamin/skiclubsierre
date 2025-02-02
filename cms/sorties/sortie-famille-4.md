@@ -6,7 +6,7 @@ published-on: 2024-11-15T19:35:33.404Z
 f_date: 2025-01-19T16:00:00.000Z
 f_saison-3: cms/category/2024-2025.md
 f_featuring: true
-f_featuring-2: true
+f_featuring-2: false
 f_couleur: cms/couleurs/sortie.md
 f_texte-2: Le loto se passera à la salle de gym de Muraz, rendez-vous à 17h.
 f_checklist-1: "# départ pas trop tôt pour les familles"
