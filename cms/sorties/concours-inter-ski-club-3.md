@@ -5,7 +5,7 @@ published-on: 2023-12-07T04:15:33.456Z
 f_date: 2025-02-15T08:00:00.000Z
 f_saison-3: cms/category/2024-2025.md
 f_featuring: true
-f_featuring-2: false
+f_featuring-2: true
 f_couleur: cms/couleurs/sortie.md
 f_texte-2: "Cher membre,  Ce samedi aura lieu le concours interclubs entre les
   ski-clubs de Sierre, Chippis et Veyras. Comme le veut le tournus, c'est notre
