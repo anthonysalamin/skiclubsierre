@@ -1,10 +1,10 @@
 ---
-title: OJ 26 - sortie 3 & 4 - Week-end Cabane
+title: OJ 26 - sortie 4 & 5 - Week-end Cabane
 created-on: 2022-11-24T00:05:56.675Z
 published-on: 2022-11-24T00:06:27.323Z
 f_saison-actuelle: true
 f_date: 2026-01-24T08:00:00.000Z
-f_texte: "Troisième et quatrième sortie OJ : Samedi et Dimanche."
+f_texte: "Quatrième et troisième sortie OJ : Samedi et Dimanche."
 tags: oj
 layout: "[oj].html"
 slug: oj-23-sortie-05
