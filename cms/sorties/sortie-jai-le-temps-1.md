@@ -2,7 +2,7 @@
 title: "Sortie « J'ai le temps » #1"
 created-on: 2023-12-07T03:47:31.664Z
 published-on: 2023-12-07T04:15:33.456Z
-f_date: 2025-01-23T08:00:00.000Z
+f_date: 2026-01-08T08:00:00.000Z
 f_saison-3: cms/category/2025-2026.md
 f_featuring: true
 f_featuring-2: true
