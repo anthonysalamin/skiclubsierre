@@ -7,7 +7,7 @@ f_saison-3: cms/category/2025-2026.md
 f_featuring: true
 f_featuring-2: false
 f_couleur: cms/couleurs/sortie.md
-f_texte-2: Les informations seront bientôt disponibles. Nous esperons vous y voir !
+f_texte-2: Les informations seront bientôt disponibles. Nous espérons vous y voir !
 f_checklist-1: ""
 f_checklist-2: ""
 tags: sorties
