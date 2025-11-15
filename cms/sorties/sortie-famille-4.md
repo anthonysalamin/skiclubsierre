@@ -3,8 +3,8 @@ title: Sortie Loto - Salle de gym de Muraz
 created-on: 2022-11-23T23:27:24.954Z
 updated-on: 2024-11-15T19:37:57.901Z
 published-on: 2024-11-15T19:35:33.404Z
-f_date: 2025-01-19T16:00:00.000Z
-f_saison-3: cms/category/2024-2025.md
+f_date: 2026-01-18T16:00:00.000Z
+f_saison-3: cms/category/2025-2026.md
 f_featuring: true
 f_featuring-2: false
 f_couleur: cms/couleurs/sortie.md
