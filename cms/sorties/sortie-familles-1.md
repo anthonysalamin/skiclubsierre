@@ -7,8 +7,17 @@ f_saison-3: cms/category/2025-2026.md
 f_featuring: true
 f_featuring-2: true
 f_couleur: cms/couleurs/sortie.md
-f_texte-2: Les informations de la sortie seront disponibles environ une semaine
-  avant la date. Nous espérons vous y voir !
+f_texte-2: Très chères et chers membres,  Noël est passé et la nouvelle année
+  approche à grand pas. Pour commencer de la meilleure des manières l'année
+  2026, quoi de mieux que notre première sortie famille qui aura lieu le
+  dimanche 4 janvier ?  Pour cette deuxième sortie de la saison, nous prenons la
+  direction d'Anzère et du restaurant du Pas de Maimbré. Le rendez-vous est
+  donné à 8h15 au parking devant les Halles à Sierre ou directement au
+  restaurant à 11h45.   Pour les personnes ne souhaitant pas skier mais qui
+  veulent passer un bon moment avec nous, la station d'Anzère propose un accès
+  piéton et le restaurant du Pas de Maimbré est facilement accessible à pied et
+  pour les personnes à mobilité réduite.  Les inscriptions se font auprès de
+  Stéphane Al-Sayegh avant le vendredi 2 janvier à midi.
 tags: sorties
 layout: "[sorties].html"
 slug: sortie-familles-1
