@@ -5,7 +5,7 @@ published-on: 2024-11-15T19:42:45.547Z
 f_date: 2026-03-19T08:00:00.000Z
 f_saison-3: cms/category/2025-2026.md
 f_featuring: true
-f_featuring-2: false
+f_featuring-2: true
 f_couleur: cms/couleurs/sortie.md
 f_texte-2: "Chers membres, Après une belle semaine blanche dans le domaine des
   Portes du Soleil l’année passée, votre comité vous invite à partir à la
