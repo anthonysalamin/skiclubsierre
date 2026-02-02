@@ -5,7 +5,7 @@ published-on: 2023-12-07T04:15:33.456Z
 f_date: 2025-12-21T08:00:00.000Z
 f_saison-3: cms/category/2025-2026.md
 f_featuring: true
-f_featuring-2: true
+f_featuring-2: false
 f_couleur: cms/couleurs/sortie.md
 f_texte-2: Très chères et chers membres,  Les sommets se sont recouverts de
   neige, une ambiance de fêtes s’installe gentiment dans nos rues et dans nos
