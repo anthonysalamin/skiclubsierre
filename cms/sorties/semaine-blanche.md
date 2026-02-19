@@ -2,7 +2,7 @@
 title: Semaine Blanche
 created-on: 2026-02-02T09:31:22.543Z
 published-on: 2026-02-02T09:31:23.738Z
-f_date: 2026-02-02T09:31:23.760Z
+f_date: 2026-03-19T09:31:23.760Z
 f_saison-3: cms/category/2025-2026.md
 f_featuring: true
 f_featuring-2: true
@@ -33,6 +33,6 @@ f_texte-2: "Chers membres, Après une belle semaine blanche dans le domaine des
 tags: sorties
 layout: "[sorties].html"
 slug: semaine-blanche-2023
-updated-on: 2026-02-02T09:31:23.624Z
+updated-on: 2026-02-19T14:12:59.288Z
 date: 2026-02-02T09:31:23.794Z
 ---
